@@ -1,4 +1,4 @@
-﻿CatNo,LengthMax (mm),LengthAxial (mm),WidthMax (mm),WidthBasal (mm),WidthNeck (mm),Thickness (mm),DSA,PSA,WeightActual (gms),Material,PointType1,PointType2,Source,Site,Area_Jennings,County
+﻿CatNo,LengthMax,LengthAxial,WidthMax,WidthBasal,WidthNeck,Thickness,DSA,PSA,WeightActual,Material,PointType1,PointType2,Source,Site,Area_Jennings,County
 50,-17.2,-16.5,13,13,7.5,2.4,190,150,0.4,CCS,Desert Side Notched,Desert Side-notched,Table S2.1. Bronco Charlie.xlsx,26EK801,Western,Elko
 163,-27.3,-23.5,14.3,14.3,7.1,2.5,190,150,0.5,CCS,Desert Side Notched,Desert Side-notched,Table S2.1. Bronco Charlie.xlsx,26EK801,Western,Elko
 165,-31.1,-31.1,8,7.5,6.2,2.5,240,135,0.7,CCS,Desert Side Notched,Desert Side-notched,Table S2.1. Bronco Charlie.xlsx,26EK801,Western,Elko
@@ -7124,10 +7124,10 @@ Aug-80,-12.8,,16.4,16.4,6,3.2,,160,0.7,CCS,Desert Side Notched,Desert Side-notch
 6/1289,-19.3,-19.3,14.2,12.2,,1.9,,,0.8,CCS,Cottonwood,Cottonwood,Table S2.53. Ft Irwin.xlsx,-,Southwestern,San Bernardino
 6/1371,-18.6,-18.6,14.8,11.6,,2.8,,,1,CCS,Cottonwood,Cottonwood,Table S2.53. Ft Irwin.xlsx,-,Southwestern,San Bernardino
 6/1720,-21.2,-21.2,16.6,13.4,,2.8,,,1,CCS,Cottonwood,Cottonwood,Table S2.53. Ft Irwin.xlsx,-,Southwestern,San Bernardino
-Jun-28,-17.8,-17.8,20.5,20.5,,2.8,,,1.1,CCS,Cottonwood,Cottonwood,Table S2.53. Ft Irwin.xlsx,-,Southwestern,San Bernardino
+28-Jun,-17.8,-17.8,20.5,20.5,,2.8,,,1.1,CCS,Cottonwood,Cottonwood,Table S2.53. Ft Irwin.xlsx,-,Southwestern,San Bernardino
 Jun-44,-16,-16,16.4,16.4,,2.6,,,0.9,CCS,Cottonwood,Cottonwood,Table S2.53. Ft Irwin.xlsx,-,Southwestern,San Bernardino
 Jun-55,16.4,16.4,9.8,9.8,,3.1,,,0.5,CCS,Cottonwood,Cottonwood,Table S2.53. Ft Irwin.xlsx,-,Southwestern,San Bernardino
-Jun-17,22.4,19.8,16.5,16.5,,3,,,0.5,CCS,Cottonwood,Cottonwood,Table S2.53. Ft Irwin.xlsx,-,Southwestern,San Bernardino
+17-Jun,22.4,19.8,16.5,16.5,,3,,,0.5,CCS,Cottonwood,Cottonwood,Table S2.53. Ft Irwin.xlsx,-,Southwestern,San Bernardino
 Jun-86,17.4,15.8,13.3,13.3,,2.7,,,0.4,CCS,Cottonwood,Cottonwood,Table S2.53. Ft Irwin.xlsx,-,Southwestern,San Bernardino
 Aug-93,33.5,28.5,11.5,,,2.9,,,0.7,CCS,Cottonwood,Cottonwood,Table S2.53. Ft Irwin.xlsx,-,Southwestern,San Bernardino
 8/103,-14.2,-14.2,14.9,,,3.2,,,,Metavolcanic,Cottonwood,Cottonwood,Table S2.53. Ft Irwin.xlsx,-,Southwestern,San Bernardino
@@ -7233,7 +7233,7 @@ Aug-93,33.5,28.5,11.5,,,2.9,,,0.7,CCS,Cottonwood,Cottonwood,Table S2.53. Ft Irwi
 6/1860,31.9,31.9,17.9,7.6,10.5,3.3,150,60,1.3,CCS,Rosegate series,Rosegate,Table S2.53. Ft Irwin.xlsx,-,Southwestern,San Bernardino
 Jun-69,-15.6,-15.6,14.9,8.3,6.8,2.9,150,110,0.6,CCS,Rosegate series,Rosegate,Table S2.53. Ft Irwin.xlsx,-,Southwestern,San Bernardino
 Jun-84,-17.9,-17.9,18.8,8.2,5.3,3.8,140,110,1.3,CCS,Rosegate series,Rosegate,Table S2.53. Ft Irwin.xlsx,-,Southwestern,San Bernardino
-Jun-14,-14.9,-14.9,15.4,8.4,7.1,3.8,160,130,0.8,CCS,Rosegate series,Rosegate,Table S2.53. Ft Irwin.xlsx,-,Southwestern,San Bernardino
+14-Jun,-14.9,-14.9,15.4,8.4,7.1,3.8,160,130,0.8,CCS,Rosegate series,Rosegate,Table S2.53. Ft Irwin.xlsx,-,Southwestern,San Bernardino
 Jun-79,34.2,34.2,22.3,9,7.9,3.9,158,116,1.5,CCS,Rosegate series,Rosegate,Table S2.53. Ft Irwin.xlsx,-,Southwestern,San Bernardino
 Aug-97,-21.5,-21.5,16.1,12.2,7,4.2,162,142,1.6,CCS,Rosegate series,Rosegate,Table S2.53. Ft Irwin.xlsx,-,Southwestern,San Bernardino
 14/130,28.6,27.2,8.3,11.3,8,3.4,180,163,1.2,CCS,Rosegate series,Rosegate,Table S2.53. Ft Irwin.xlsx,-,Southwestern,San Bernardino
@@ -7645,7 +7645,7 @@ Apr-36,-27,-27,20.5,19,,3.3,,,2.3,CCS,Saratoga,Saratoga,Table S2.53. Ft Irwin.xl
 6/921,33,33,17.4,16.5,,4.2,,,1.9,CCS,Saratoga,Saratoga,Table S2.53. Ft Irwin.xlsx,-,Southwestern,San Bernardino
 6/1091,35.5,35.5,23.1,3.8,12.8,6.6,213,54,4,Indeterminate,Saratoga,Saratoga,Table S2.53. Ft Irwin.xlsx,-,Southwestern,San Bernardino
 6/1314,-22.6,-22.6,22.5,7.5,22.6,4,,,2.9,CCS,Saratoga,Saratoga,Table S2.53. Ft Irwin.xlsx,-,Southwestern,San Bernardino
-Jun-27,-35.5,-35.5,19.9,4.9,7.9,6,160,50,3.4,CCS,Saratoga,Saratoga,Table S2.53. Ft Irwin.xlsx,-,Southwestern,San Bernardino
+27-Jun,-35.5,-35.5,19.9,4.9,7.9,6,160,50,3.4,CCS,Saratoga,Saratoga,Table S2.53. Ft Irwin.xlsx,-,Southwestern,San Bernardino
 Jun-34,-38.8,-38.8,24.7,,11.6,5.2,141,,6,CCS,Saratoga,Saratoga,Table S2.53. Ft Irwin.xlsx,-,Southwestern,San Bernardino
 Jun-44,60,60,29.9,7.4,22,14.5,205,,16.9,CCS,Saratoga,Saratoga,Table S2.53. Ft Irwin.xlsx,-,Southwestern,San Bernardino
 Jun-75,50,50,29,6,11.6,6.4,,,9.9,CCS,Saratoga,Saratoga,Table S2.53. Ft Irwin.xlsx,-,Southwestern,San Bernardino
@@ -10694,58 +10694,58 @@ C-2/lA-27,-28,-28,-16.5,9.6,7.8,3.5,140,100,0.8,Obsidian,Corner Notched,Indeterm
 B4-5/lA-24,-18,-18,-11.4,7.5,5.1,2.6,,120,0.2,CCS,Corner Notched,Indeterminate,Table S2.90 Dirty Shame Rockshelter.xlsx,Dirty Shame Rockshelter,Northern,Malheur
 A3-6/1B-131,-27.1,-26.9,18.1,8.4,7,3.6,140,100,1,Obsidian,Corner Notched,Indeterminate,Table S2.90 Dirty Shame Rockshelter.xlsx,Dirty Shame Rockshelter,Northern,Harney
 3,21,21,-12,7.3,6.8,3.3,,110,0.3,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-09,-31,-31,17.1,5.8,6,4.7,160,100,1.3,Indeterminate,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+9-Jan,-31,-31,17.1,5.8,6,4.7,160,100,1.3,Indeterminate,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-56,20.7,20.7,11,8.2,7.5,4,150,100,0.6,CCS,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-86,-22.2,-22.2,-12.7,4.2,4.2,4.2,160,90,0.5,CCS,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-87,16,15,-17.2,7.1,5.7,3,125,105,0.3,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-96,-38.2,-37,13.6,-10,6.3,4.3,150,110,1.6,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-97,-21.5,-20.5,-15.7,6.7,5.6,2.5,130,100,0.4,CCS,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-19,-26.5,-26.5,-16.5,8,7.1,4.4,140,110,1,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+19-Jan,-26.5,-26.5,-16.5,8,7.1,4.4,140,110,1,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-38,-20.2,-19.5,-14,7.5,5.8,2.8,150,115,0.3,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-71,22.5,22.5,8.8,6.5,5.2,3.8,180,100,0.4,CCS,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-72,-27.2,-26.5,18.5,7.6,6.5,3.6,140,110,1,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-03,-24.7,-22.2,-17.5,7.7,7.3,3,140,100,0.5,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+3-Jan,-24.7,-22.2,-17.5,7.7,7.3,3,140,100,0.5,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-37,-26,-26,12.7,7.2,6.2,3.3,170,100,0.6,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-83,-30,-30,16,6.9,5.5,4.1,140,110,1.3,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-29,-28.5,-28.5,-14.5,9.4,8.4,4.9,180,100,1.3,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+29-Jan,-28.5,-28.5,-14.5,9.4,8.4,4.9,180,100,1.3,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-55,-25.5,-25.5,-16.5,7.4,5.6,2.8,130,110,0.4,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-56,-25,-25,-17.5,-6.9,6.4,3.2,130,120,0.7,CCS,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-59,28.8,28.8,15.6,6.3,5.5,3.4,130,100,0.8,CCS,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-76,-21,-20.2,-14.8,7,5.3,2.6,150,115,0.3,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-78,16.4,16.4,-16.5,8.7,7.1,2.9,135,110,0.3,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-00,23.2,23,-17.8,8,5.6,2.4,150,130,0.5,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-03,-24,-24,16.8,-9.7,7.3,2.8,140,120,0.5,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+3-Jan,-24,-24,16.8,-9.7,7.3,2.8,140,120,0.5,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-35,-26.5,-26.5,18.2,9.4,7.3,4.7,140,110,1.3,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-35,-21,-20.3,-15,6.9,5.3,2.1,125,115,0.2,Indeterminate,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-41,17,16.2,-11.6,6.5,5.8,3,,100,0.3,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-54,-20.5,-19.9,-15.7,6,4.8,2.6,140,120,0.4,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-73,25.1,25.1,-19.5,8.8,7.2,3.6,140,110,0.8,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-10,24.3,24.3,15.5,-7.9,6.3,3.6,160,110,1,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+10-Jan,24.3,24.3,15.5,-7.9,6.3,3.6,160,110,1,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-35,16.8,16.8,8.8,6,4.7,2.3,180,105,0.2,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-93,33.3,33.3,-17.5,6.5,6,4.3,135,100,1.1,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-10,18.7,18.7,11.4,9,5.6,4,170,120,0.6,Indeterminate,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+10-Jan,18.7,18.7,11.4,9,5.6,4,170,120,0.6,Indeterminate,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-70,-21.3,-21.3,-12.6,6.7,5.7,2.8,150,100,0.5,Indeterminate,Desert Side Notched,Desert Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 1-1892,28.3,27.5,17.8,-7.5,6,2.6,130,120,0.6,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-03,22.8,22.8,-11.3,7.9,5.6,3.7,180,110,0.5,CCS,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-05,20.9,20.8,11.5,7.4,5.6,3,160,120,0.5,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-06,-34,-34,-17.5,-7.6,6.8,4.1,150,120,1.6,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-14,-35,-35,17.1,8.2,6.8,4,130,125,1.3,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-15,-20.5,-20.5,-12,9.6,7.2,4.6,,115,0.5,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-16,-28.3,-26.5,-17.5,-10,8.2,3.7,160,120,0.7,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-18,-24.5,-23.1,12.3,8.5,5.3,3.2,150,110,0.5,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-22,-26.5,-26.5,14.4,9,6.3,4.4,160,105,1.1,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-23,-27.2,-26,-15.5,8.1,6.2,3.4,165,120,0.6,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-24,37.4,36.8,14,8,6.7,4.1,170,100,1.7,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-25,20.3,20.3,12.1,6.2,5.9,2.4,190,120,0.5,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-26,-25,,-18,-9.5,8,3.9,155,100,1.2,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+3-Jan,22.8,22.8,-11.3,7.9,5.6,3.7,180,110,0.5,CCS,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+5-Jan,20.9,20.8,11.5,7.4,5.6,3,160,120,0.5,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+6-Jan,-34,-34,-17.5,-7.6,6.8,4.1,150,120,1.6,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+14-Jan,-35,-35,17.1,8.2,6.8,4,130,125,1.3,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+15-Jan,-20.5,-20.5,-12,9.6,7.2,4.6,,115,0.5,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+16-Jan,-28.3,-26.5,-17.5,-10,8.2,3.7,160,120,0.7,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+18-Jan,-24.5,-23.1,12.3,8.5,5.3,3.2,150,110,0.5,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+22-Jan,-26.5,-26.5,14.4,9,6.3,4.4,160,105,1.1,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+23-Jan,-27.2,-26,-15.5,8.1,6.2,3.4,165,120,0.6,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+24-Jan,37.4,36.8,14,8,6.7,4.1,170,100,1.7,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+25-Jan,20.3,20.3,12.1,6.2,5.9,2.4,190,120,0.5,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+26-Jan,-25,,-18,-9.5,8,3.9,155,100,1.2,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-51,-25,,18.7,-8,6.1,3.2,130,110,0.8,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-60,-22.5,-21.5,-14.5,-9,8.7,3.4,185,130,0.7,CCS,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-77,-22,-22,12.4,8,6.4,3.4,170,100,0.5,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-85,-24,-24,-20,8.2,6.3,3.3,115,105,0.5,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-89,-22.5,-21,-14,8.7,6.7,3.8,150,125,0.4,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-01,-21,-21,-11.5,6.5,6,3.1,,120,0.3,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-06,-32,-32,18.6,8.3,6.6,4,130,110,1.4,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-07,-22,-21.3,-15.5,9.1,6.4,3.1,130,120,,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+1-Jan,-21,-21,-11.5,6.5,6,3.1,,120,0.3,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+6-Jan,-32,-32,18.6,8.3,6.6,4,130,110,1.4,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+7-Jan,-22,-21.3,-15.5,9.1,6.4,3.1,130,120,,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-40,24.7,23.4,-17,8,5.6,2.8,140,120,0.5,CCS,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-54,28,27.3,16.5,7.6,7.8,3.8,150,100,0.8,CCS,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-58,-30,-30,-21,8.9,7.5,4.2,140,120,1.4,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
@@ -10765,24 +10765,24 @@ Jan-39,35.2,33.5,-21,-16.5,12.7,4.4,160,115,2.2,Obsidian,Rosegate series,Rosegat
 Jan-48,-33,-33,-24.2,19.2,12,4.2,170,145,2.2,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-67,-34.6,-33,12.1,10.7,8.6,3.4,145,120,1.2,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-00,-35.1,-33.3,25.9,18.5,13.4,5.8,160,130,3.5,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-15,-42,-42,25.2,16,10,5.2,170,130,4.1,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+15-Jan,-42,-42,25.2,16,10,5.2,170,130,4.1,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-42,-30,-28.5,-22,-15,11,4.8,165,110,2.1,CCS,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-53,33,31.2,25.6,20.3,10,5.7,150,140,3.1,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-00,-37.7,-36,18.7,11.3,10.1,5.2,170,110,3,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-06,-39,-39,25.3,17.7,11.3,5.4,150,130,2.3,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+6-Jan,-39,-39,25.3,17.7,11.3,5.4,150,130,2.3,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-90,-36,-34,-26.5,-16.5,12.3,4.9,150,130,2,CCS,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-12,-30,-30,-21,19,14.1,5.4,,140,2,Indeterminate,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-14,-37.7,-35.5,23.6,17,13.4,4.6,160,130,2.6,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-15,-32.5,-32,22.1,-13.4,10.9,4.2,155,130,2.4,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-22,-33,-33.9,15.1,-13.3,8.1,4.7,160,150,1.6,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-25,-31.5,-30.8,-19,-11.5,8.7,4.5,,130,1.4,Indeterminate,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+12-Jan,-30,-30,-21,19,14.1,5.4,,140,2,Indeterminate,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+14-Jan,-37.7,-35.5,23.6,17,13.4,4.6,160,130,2.6,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+15-Jan,-32.5,-32,22.1,-13.4,10.9,4.2,155,130,2.4,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+22-Jan,-33,-33.9,15.1,-13.3,8.1,4.7,160,150,1.6,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+25-Jan,-31.5,-30.8,-19,-11.5,8.7,4.5,,130,1.4,Indeterminate,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-88,24.3,24.3,22.3,14.8,12,4.8,160,140,1.8,CCS,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-95,-35,-33,-24.5,15.8,11,5.2,170,140,1.4,CCS,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-03,-35.5,-33.7,27,19.6,14.3,5.2,140,130,3.5,Indeterminate,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-22,-36.5,-35,-21.5,-13.5,12.7,0.5,180,110,2.5,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+3-Jan,-35.5,-33.7,27,19.6,14.3,5.2,140,130,3.5,Indeterminate,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+22-Jan,-36.5,-35,-21.5,-13.5,12.7,0.5,180,110,2.5,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-98,-32,-30,24,20.4,13.2,4,150,125,1.1,Indeterminate,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-99,-33.3,-30,-22,16.4,13.1,5.7,,120,2.5,CCS,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-06,29.3,24,-21,18.8,12.5,5.3,170,140,2.1,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+6-Jan,29.3,24,-21,18.8,12.5,5.3,170,140,2.1,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-46,-33.6,-30,-23,17.3,14.6,4.6,,130,2.6,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-73,-36.4,-33,20.7,20.7,16.3,4.5,220,130,2.1,Indeterminate,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-99,-31,-29,17.5,-16.3,11.3,5.4,170,120,1.8,Obsidian,Rosegate series,Rosegate,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
@@ -10793,13 +10793,13 @@ Jan-36,-35,-32.7,-26,-15.5,12.4,5,160,130,3.1,Obsidian,Rosegate series,Rosegate,
 1-1890,-33.3,-31,27.3,-15.7,11.6,5,140,120,1.8,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 1-1895,-41.5,-34.7,24,23.1,18.1,4.9,170,140,3.6,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 1-1898,-35,-32.7,-21.5,13.9,8.2,4.2,150,130,2.5,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-07,-36.8,-34,-25.5,-18.5,12.4,4.4,160,140,1.2,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-08,-20,-18.5,-14.1,-14.1,10.2,4.1,170,110,0.7,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-20,-30,-27.4,24.6,15.5,10.1,4.7,130,100,1.6,CCS,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+7-Jan,-36.8,-34,-25.5,-18.5,12.4,4.4,160,140,1.2,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+8-Jan,-20,-18.5,-14.1,-14.1,10.2,4.1,170,110,0.7,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+20-Jan,-30,-27.4,24.6,15.5,10.1,4.7,130,100,1.6,CCS,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-75,24.3,21.2,19.6,12.8,10.1,4.8,180,110,1.4,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-81,41.2,37.1,30.4,25.4,19.3,6.3,160,140,4.8,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-23,-35,-32.5,21.5,16.5,11.6,4.8,170,150,1.9,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-25,-41.5,-38.7,-20.5,-20.5,-17.5,5.7,175,130,3.2,FGV,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+23-Jan,-35,-32.5,21.5,16.5,11.6,4.8,170,150,1.9,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+25-Jan,-41.5,-38.7,-20.5,-20.5,-17.5,5.7,175,130,3.2,FGV,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-46,-41.7,-38.5,-26.5,-20.5,16.1,6.5,175,140,3.2,FGV,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-59,-38.4,-36,-24.5,-17.5,14.2,4.7,140,120,2.3,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-60,-28.6,-24.5,-25.3,13.5,13.2,6.7,160,100,2.1,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
@@ -10809,79 +10809,79 @@ Jan-96,-41,-33.4,-26.7,18.3,17.6,5.8,175,100,2.2,Indeterminate,Elko Corner Notch
 Jan-87,-40.2,-35,-18.2,13.5,12.5,5.7,200,95,3.5,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-40,-47.2,-42,23,15.2,16.8,5.6,250,90,2.4,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-63,-38.5,-31.5,22.5,17.9,18.7,8,190,85,5.3,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-11,19.4,18.3,-12.2,5.8,5.8,3,170,80,0.3,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-09,-29.5,-25.8,-19.5,13.8,12.7,4.6,160,95,0.8,CCS,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+11-Jan,19.4,18.3,-12.2,5.8,5.8,3,170,80,0.3,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+9-Jan,-29.5,-25.8,-19.5,13.8,12.7,4.6,160,95,0.8,CCS,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-40,36.1,36.1,24,7,8.8,4.6,150,80,3.1,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-75,-38,-38,28.4,28.4,13.2,4.6,140,90,4.1,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-79,34,34,19.8,10.1,11,5.2,165,90,2.6,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-21,-47.5,-44.5,22,-19.3,11.7,5.7,150,165,5.4,Indeterminate,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+21-Jan,-47.5,-44.5,22,-19.3,11.7,5.7,150,165,5.4,Indeterminate,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-39,-38.6,-36.5,22.3,22.3,11.3,4.3,190,160,1.8,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-10,41.1,41.1,15.5,-13,9.4,4.7,190,160,2.1,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+10-Jan,41.1,41.1,15.5,-13,9.4,4.7,190,160,2.1,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-80,-35,-35,21,19.8,13.1,5,200,160,2.6,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-11,39.7,38.1,-26,-20,12.1,6.6,160,160,4.4,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-16,-38,-33.5,-25,22.7,12.6,5.3,190,160,2.8,CCS,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+11-Jan,39.7,38.1,-26,-20,12.1,6.6,160,160,4.4,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+16-Jan,-38,-33.5,-25,22.7,12.6,5.3,190,160,2.8,CCS,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-35,-33.5,-32.9,-19,-19,10.2,5.6,180,165,3.4,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 1-1894,-31,-29.5,15.8,13.5,,4.5,,,1.5,Obsidian,Elko Eared,Elko Eared,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 1-1896,-34,-31.5,17.2,17.2,,4.3,,,1.8,Obsidian,Elko Eared,Elko Eared,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 1-1899,36.7,33.5,22,14.5,,5.8,,,4.2,Obsidian,Elko Eared,Elko Eared,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-00,-31,-27.5,,14.3,,5.4,,,0.9,Indeterminate,Elko Eared,Elko Eared,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-10,-38.5,-37.2,17.4,-15.2,,6.5,,,1.7,Obsidian,Elko Eared,Elko Eared,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-19,-33,-32.5,20,15.2,,4.8,,,2.1,Obsidian,Elko Eared,Elko Eared,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+10-Jan,-38.5,-37.2,17.4,-15.2,,6.5,,,1.7,Obsidian,Elko Eared,Elko Eared,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+19-Jan,-33,-32.5,20,15.2,,4.8,,,2.1,Obsidian,Elko Eared,Elko Eared,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-65,-32.5,-32,19,19,,5.2,,,2.4,CCS,Elko Eared,Elko Eared,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-24,-40,-37,16.7,13,,6,,,3.3,Obsidian,Elko Eared,Elko Eared,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+24-Jan,-40,-37,16.7,13,,6,,,3.3,Obsidian,Elko Eared,Elko Eared,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-00,32.7,31.7,13.6,12.7,,4.1,,,1.7,Obsidian,Elko Eared,Elko Eared,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-05,43.9,41.8,17.9,10.8,,5.8,,,4.6,Obsidian,Elko Eared,Elko Eared,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+5-Jan,43.9,41.8,17.9,10.8,,5.8,,,4.6,Obsidian,Elko Eared,Elko Eared,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-46,37,34.8,17.8,16,,4.8,,,2.3,Indeterminate,Elko Eared,Elko Eared,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-65,-65,-63,19.8,14.3,,7,,,9,Obsidian,Elko Eared,Elko Eared,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-68,-41,-36.2,22,14.2,,5.3,,,3.2,CCS,Elko Eared,Elko Eared,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-48,31.5,30.8,16.3,16.3,,4.3,,,1.6,Obsidian,Elko Eared,Elko Eared,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-10,33.5,33.5,13.8,11.8,,4.3,,,2.2,Obsidian,Elko Eared,Elko Eared,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-02,41.1,41.1,14,8.2,,4.3,,,2.1,Obsidian,Elko Eared,Elko Eared,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-08,-27.6,-25,,14.5,,5.5,,,0.8,Obsidian,Elko Eared,Elko Eared,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-17,27.4,27.4,19.2,17,,4.2,,,1.7,Obsidian,Elko Eared,Elko Eared,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+10-Jan,33.5,33.5,13.8,11.8,,4.3,,,2.2,Obsidian,Elko Eared,Elko Eared,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+2-Jan,41.1,41.1,14,8.2,,4.3,,,2.1,Obsidian,Elko Eared,Elko Eared,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+8-Jan,-27.6,-25,,14.5,,5.5,,,0.8,Obsidian,Elko Eared,Elko Eared,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+17-Jan,27.4,27.4,19.2,17,,4.2,,,1.7,Obsidian,Elko Eared,Elko Eared,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-33,-34,-32,17.8,17.8,,3.6,,,1.9,Obsidian,Elko Eared,Elko Eared,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-45,25.4,24.3,18.7,,,4.7,,,1.8,Obsidian,Elko Eared,Elko Eared,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-09,-30,-30,19.2,19.2,,4.6,,,1.4,Obsidian,Elko Eared,Elko Eared,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+9-Jan,-30,-30,19.2,19.2,,4.6,,,1.4,Obsidian,Elko Eared,Elko Eared,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-52,-22,-18,-15,-15,-7,2.3,190,170,0.4,CCS,Elko Eared,Elko Eared,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-01,25.2,22.8,-11,-11,5.3,2.2,180,140,0.5,Obsidian,Gatecliff Split Stem,Gatecliff Split Stem,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+1-Jan,25.2,22.8,-11,-11,5.3,2.2,180,140,0.5,Obsidian,Gatecliff Split Stem,Gatecliff Split Stem,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-39,-24,-19,13.2,13.2,-6,2.9,210,180,0.7,Obsidian,Gatecliff Split Stem,Gatecliff Split Stem,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-81,23.2,20.5,15,15,8,2.9,200,170,0.7,Obsidian,Gatecliff Split Stem,Gatecliff Split Stem,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-01,-29,-29,-13,-13,5.3,3.7,200,190,1,Obsidian,Gatecliff Split Stem,Gatecliff Split Stem,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-10,17.1,16.1,-10,-10,6.3,2.5,210,190,0.8,Obsidian,Gatecliff Split Stem,Gatecliff Split Stem,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+1-Jan,-29,-29,-13,-13,5.3,3.7,200,190,1,Obsidian,Gatecliff Split Stem,Gatecliff Split Stem,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+10-Jan,17.1,16.1,-10,-10,6.3,2.5,210,190,0.8,Obsidian,Gatecliff Split Stem,Gatecliff Split Stem,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-91,16.1,13.6,-14,-14,7.8,2.5,200,170,0.3,Obsidian,Gatecliff Split Stem,Gatecliff Split Stem,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-53,-30,-25,-15,-15,10.1,3.2,230,140,1.3,Obsidian,Gatecliff Split Stem,Gatecliff Split Stem,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-00,-29,-25,-14,-14,1.2,3.2,220,180,1,Obsidian,Gatecliff Split Stem,Gatecliff Split Stem,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-06,-34,-30,12,12,-8,4.1,190,170,1.5,Obsidian,Gatecliff Split Stem,Gatecliff Split Stem,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+6-Jan,-34,-30,12,12,-8,4.1,190,170,1.5,Obsidian,Gatecliff Split Stem,Gatecliff Split Stem,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-81,36.8,34.4,12.2,12.2,6.3,3,190,170,1.3,FGV,Gatecliff Contracting Stem,Gatecliff Contracting Stem,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-36,-34,-31,-15,-15,-8,2.4,180,160,1.1,Obsidian,Gatecliff Contracting Stem,Gatecliff Contracting Stem,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-49,27.3,23.2,-13,-13,6.7,3,180,180,0.6,Obsidian,Gatecliff Contracting Stem,Gatecliff Contracting Stem,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-96,33,29.4,12.1,12.1,6.3,3.2,170,170,1,Obsidian,Large Side-Notched,Large Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-15,-27,-23,14.9,14.9,8.9,3.1,170,170,1,Obsidian,Large Side-Notched,Large Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-17,-28,-24,11.7,11.7,7,1.9,180,170,0.4,Obsidian,Large Side-Notched,Large Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+15-Jan,-27,-23,14.9,14.9,8.9,3.1,170,170,1,Obsidian,Large Side-Notched,Large Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+17-Jan,-28,-24,11.7,11.7,7,1.9,180,170,0.4,Obsidian,Large Side-Notched,Large Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-89,-22,-22,11,6,4,2.5,170,120,1.9,Obsidian,Large Side-Notched,Large Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-93,21.9,21.9,9,6.5,6.5,4,190,100,0.5,Obsidian,Large Side-Notched,Large Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-18,-22,-20,-17,8,6.5,2.9,140,100,0.9,Indeterminate,Large Side-Notched,Large Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+18-Jan,-22,-20,-17,8,6.5,2.9,140,100,0.9,Indeterminate,Large Side-Notched,Large Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-97,-28,-28,-13,6,6,3.4,170,120,0.5,Obsidian,Large Side-Notched,Large Side-notched,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-36,22.2,22.2,-16,6,6,2.5,160,100,1,Obsidian,Humboldt Series,Humboldt,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-40,19,18,16.5,6.5,7,2.1,170,100,0.5,Obsidian,Humboldt Series,Humboldt,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-26,26,26,-14,5,5,4,170,90,1.3,Obsidian,Humboldt Series,Humboldt,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-27,19,17,9,9,7,3,220,120,0.4,Obsidian,Humboldt Series,Humboldt,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+26-Jan,26,26,-14,5,5,4,170,90,1.3,Obsidian,Humboldt Series,Humboldt,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+27-Jan,19,17,9,9,7,3,220,120,0.4,Obsidian,Humboldt Series,Humboldt,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-84,-36,-35,-17,8,6,2.5,110,100,1,Obsidian,Humboldt Series,Humboldt,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-36,-34,-34,17.5,7,7,4.3,170,100,2.1,Obsidian,Humboldt Series,Humboldt,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-42,-54,-52,19,-16,,5.2,170,120,4.5,Indeterminate,Humboldt Series,Humboldt,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-69,33,31,-27,19,13.7,3.7,180,120,4,Obsidian,Humboldt Series,Humboldt,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-15,40.4,40.4,26.3,24.3,21.7,5.2,170,130,5.3,Obsidian,Humboldt Series,Humboldt,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+15-Jan,40.4,40.4,26.3,24.3,21.7,5.2,170,130,5.3,Obsidian,Humboldt Series,Humboldt,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-44,-49,-46,20,12.5,9.4,6.5,170,110,3.5,Obsidian,Humboldt Series,Humboldt,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-56,-49,-49,25,22.3,14.4,4.4,180,140,3.8,CCS,Humboldt Series,Humboldt,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-14,-45,-43,27,18,13,6,160,130,5.2,Obsidian,Humboldt Series,Humboldt,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+14-Jan,-45,-43,27,18,13,6,160,130,5.2,Obsidian,Humboldt Series,Humboldt,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-73,-50,-50,31.4,-17,15.5,4.1,140,140,4.4,Obsidian,Humboldt Series,Humboldt,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-99,30,30,-25,-13,10,4,130,110,2,Obsidian,Humboldt Series,Humboldt,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-74,-52,-52,24,23,15,5,160,120,4.2,CCS,Humboldt Series,Humboldt,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-88,-40.9,-38.9,26,16.5,,4.1,160,110,3,Obsidian,Great Basin Stemmed,Western Stemmed,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-50,-48,-46,24.4,16.1,13.2,6.1,190,110,4.3,Obsidian,Great Basin Concave Base,Great Basin Concave Base,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-17,52,50,30,16,14.5,5,170,140,5.7,Obsidian,Great Basin Concave Base,Great Basin Concave Base,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+17-Jan,52,50,30,16,14.5,5,170,140,5.7,Obsidian,Great Basin Concave Base,Great Basin Concave Base,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-93,46,44,22,22,13.6,5,190,130,4.9,Obsidian,Great Basin Concave Base,Great Basin Concave Base,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
-Jan-16,42,40.5,24,22,16,6.5,170,140,6,Obsidian,Great Basin Concave Base,Great Basin Concave Base,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
+16-Jan,42,40.5,24,22,16,6.5,170,140,6,Obsidian,Great Basin Concave Base,Great Basin Concave Base,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Harney
 Jan-56,-40,-38,-25,16.7,,4.3,130,110,2.2,Obsidian,Great Basin Concave Base,Great Basin Concave Base,Table S2.95 Catlow Cave #1.xlsx,35HA405,Northern,Washoe
 103-10,45,43,23,23,12,5,170,140,5,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.96 Hanging Rock Shelter.xlsx,26WA1502,Northern,Washoe
 103-84,50.7,48,28,19,14.8,6,160,120,5.7,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.96 Hanging Rock Shelter.xlsx,26WA1502,Northern,Washoe
@@ -11050,33 +11050,33 @@ Jan-56,-40,-38,-25,16.7,,4.3,130,110,2.2,Obsidian,Great Basin Concave Base,Great
 Jan-82,-27.3,-25.1,14.9,14.9,,2.5,,,0.6,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-67,-29.8,-28.7,15.4,15.4,,2.4,,,0.8,CCS,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-81,-29.5,-27.8,15.6,15.6,,3.2,,,1.2,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-18,29.6,29.3,15.3,14.7,,3.1,,,1.1,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-22,-28,-26.3,13.2,13.2,,2.6,,,0.6,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-25,48.3,48.3,15.6,8.6,7.3,3.5,120,100,2.2,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+18-Jan,29.6,29.3,15.3,14.7,,3.1,,,1.1,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+22-Jan,-28,-26.3,13.2,13.2,,2.6,,,0.6,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+25-Jan,48.3,48.3,15.6,8.6,7.3,3.5,120,100,2.2,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-82,-23,-23,16.8,6.8,6.1,3.2,130,100,0.6,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-80,-35,-33.9,-18,8.2,6.2,3,130,110,0.7,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-92,-31,,22,-7,6.7,3.1,140,110,0.8,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-12,18.7,17.8,-16.5,6.7,5.8,3.2,130,100,0.5,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+12-Jan,18.7,17.8,-16.5,6.7,5.8,3.2,130,100,0.5,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-40,-23.5,-23.5,12,5.5,3.8,3.1,145,110,0.6,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-51,22.8,22.8,18.5,7.8,6.5,3.4,140,120,1,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-61,-29.3,-27.5,18.2,8.7,7.1,3.4,140,110,0.7,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-64,-23,-21.2,-19.1,7.5,6.9,3.9,140,100,1,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-95,17.8,17.8,-20.5,7.2,6.1,3.1,130,110,0.6,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-03,24.8,24.8,-16.5,8.8,7,3.4,145,110,0.5,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-25,-31,-31,-17,7.6,7.4,4.3,160,90,1.1,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-26,29.3,28.7,-14.2,6.6,4.5,3.9,130,100,1,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-31,27,27,-17,8.3,6.3,3,140,110,0.7,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+3-Jan,24.8,24.8,-16.5,8.8,7,3.4,145,110,0.5,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+25-Jan,-31,-31,-17,7.6,7.4,4.3,160,90,1.1,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+26-Jan,29.3,28.7,-14.2,6.6,4.5,3.9,130,100,1,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+31-Jan,27,27,-17,8.3,6.3,3,140,110,0.7,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-85,23,23,17.8,8.1,6.2,2.8,140,120,0.7,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-86,34.4,34.4,-19.5,8.3,5.5,4.8,120,100,2.1,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-95,-38,-38,-19,9.6,7.5,4,140,110,1.4,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-19,-27,-26.3,-11,8.1,5.1,3.7,180,120,0.7,FGV,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-05,20.1,20.1,-14.5,5.3,5,2.8,140,110,0.6,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-28,-18,-18,18.5,8.4,6.9,3.4,140,120,0.6,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+19-Jan,-27,-26.3,-11,8.1,5.1,3.7,180,120,0.7,FGV,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+5-Jan,20.1,20.1,-14.5,5.3,5,2.8,140,110,0.6,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+28-Jan,-18,-18,18.5,8.4,6.9,3.4,140,120,0.6,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-74,19.5,18.4,-17.9,8.4,5.8,2.8,140,110,0.5,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-76,-25.5,-25.5,15.3,8.2,5.6,4.2,160,110,1,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-81,24.3,24,-15,5.9,5.4,3,140,95,0.3,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-57,25.7,25.7,10.2,7.1,4.7,3.2,180,120,0.5,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-23,17.6,17.6,-13.5,7.6,5.8,3,150,110,0.4,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+23-Jan,17.6,17.6,-13.5,7.6,5.8,3,150,110,0.4,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-70,19.4,19,-21,6.3,6,2.8,140,100,0.5,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-87,20.9,19.7,16.5,8.8,7.2,3.1,120,110,0.4,Obsidian,Desert Side Notched,Desert Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-75,,-32,18.6,6.3,5.4,3.1,140,100,1.1,Obsidian,Cottonwood Triangular,Cottonwood,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
@@ -11087,8 +11087,8 @@ Jan-32,24.6,24.6,-15,5.7,4.8,3,140,100,0.3,Indeterminate,Cottonwood Triangular,C
 Jan-50,-27,-27,19.3,8.1,7,3.3,140,110,1.3,Obsidian,Cottonwood Triangular,Cottonwood,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-55,30.1,30.1,13.9,7.7,6.1,2.8,160,105,0.6,Obsidian,Cottonwood Triangular,Cottonwood,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-75,-28.5,-28.5,18.8,6.6,6.2,3.9,130,100,1.4,Obsidian,Cottonwood Triangular,Cottonwood,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-15,42.3,42.3,18.3,9.1,7.6,4.1,140,100,2.8,Obsidian,Cottonwood Triangular,Cottonwood,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-14,34.2,34.2,-19,7.2,6,3.2,130,100,0.9,Obsidian,Cottonwood Triangular,Cottonwood,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+15-Jan,42.3,42.3,18.3,9.1,7.6,4.1,140,100,2.8,Obsidian,Cottonwood Triangular,Cottonwood,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+14-Jan,34.2,34.2,-19,7.2,6,3.2,130,100,0.9,Obsidian,Cottonwood Triangular,Cottonwood,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-34,-26.6,-26.6,17.5,4.5,5.1,2.8,130,100,1,Indeterminate,Cottonwood Triangular,Cottonwood,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-57,33.3,33.3,18.6,7.3,6,3.5,150,110,1.2,Obsidian,Cottonwood Triangular,Cottonwood,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-90,-36.9,-36.9,-30.8,9.6,8.6,4.4,120,110,2.3,Obsidian,Cottonwood Triangular,Cottonwood,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
@@ -11098,80 +11098,80 @@ Jan-97,31.8,31.8,16.6,7.8,6.9,4,140,110,1.6,Obsidian,Rosegate series,Rosegate,Ta
 Jan-34,29.2,29.2,10.4,6.6,5.8,3.5,180,110,1,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-94,-26.5,-26.5,-19.5,8.2,7.4,3.6,115,100,1.1,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-95,-26,-25.5,-17.5,7.6,6.8,3,120,110,0.7,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-16,20.9,20.9,-20.4,9.2,7.7,3.6,140,110,0.9,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-20,24.4,24.4,13.6,8.4,6.2,4.8,170,110,0.7,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+16-Jan,20.9,20.9,-20.4,9.2,7.7,3.6,140,110,0.9,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+20-Jan,24.4,24.4,13.6,8.4,6.2,4.8,170,110,0.7,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-71,20.1,20.1,-13.2,7,6.8,3.8,180,90,1.1,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-75,22.2,21.5,-14,8.6,-5.8,3.1,160,130,0.7,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-80,22.3,21.5,-13.6,8.6,5.7,3,160,130,0.6,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-43,33.6,33.6,20.9,-6.8,5.8,3.6,130,100,1.2,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-82,24.9,24.9,-16.5,6.7,5.7,3.4,120,100,0.7,CCS,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-91,-23.5,-22.4,19.7,6.7,5.3,3.2,130,100,1,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-08,-26.6,-25.3,-16.5,7.8,6.3,3,120,100,0.4,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-11,24.8,24,-14.5,-8.5,6.8,3.1,150,120,0.6,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-13,28,28,-15.1,7.5,6.5,3.6,,120,1,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-29,29.7,29.2,18.7,8.4,7.7,3.3,120,105,1.1,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+8-Jan,-26.6,-25.3,-16.5,7.8,6.3,3,120,100,0.4,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+11-Jan,24.8,24,-14.5,-8.5,6.8,3.1,150,120,0.6,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+13-Jan,28,28,-15.1,7.5,6.5,3.6,,120,1,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+29-Jan,29.7,29.2,18.7,8.4,7.7,3.3,120,105,1.1,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-52,-32.5,-31.3,-18,9,6.2,2.6,140,110,0.4,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-63,24.4,24.4,16,8.1,5.8,4,120,120,0.9,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-09,-23.9,-23.3,16.4,7.7,5.2,2.8,140,120,0.6,CCS,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-10,-33,-33,-16.5,7.8,6.4,3.3,130,100,1.1,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-11,-25.2,-23.2,-16.6,8.4,6.7,3.4,,110,1,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+9-Jan,-23.9,-23.3,16.4,7.7,5.2,2.8,140,120,0.6,CCS,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+10-Jan,-33,-33,-16.5,7.8,6.4,3.3,130,100,1.1,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+11-Jan,-25.2,-23.2,-16.6,8.4,6.7,3.4,,110,1,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-58,26,26,18.9,7.7,7.2,3.1,135,120,1,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-62,33.1,32.3,18.8,7.4,6,4,130,120,1.2,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-64,40.7,40.7,10.4,9.6,8,5.5,240,120,2.1,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-65,16.1,16.1,14.7,5.1,4,2.5,130,100,0.3,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-73,20.1,18.8,18.4,7.7,6.5,2.9,140,120,0.6,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-84,36.3,36.3,12.9,-8,5.4,2.8,160,125,0.7,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-27,26,26,11.9,-8.4,5.7,3.8,190,100,0.7,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-15,21.6,20.4,-16.6,7.9,6.3,3.2,155,110,0.6,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+27-Jan,26,26,11.9,-8.4,5.7,3.8,190,100,0.7,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+15-Jan,21.6,20.4,-16.6,7.9,6.3,3.2,155,110,0.6,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-43,21.1,21.1,19.1,-6.3,6.1,2.5,130,100,0.6,Indeterminate,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-44,-20.7,-19.7,-20.9,9.3,7.6,3,130,110,0.5,CCS,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-78,18.3,18.3,14.2,6.9,5.3,3.5,160,110,0.5,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-81,27.1,26.8,-13.6,7.6,6.2,2.5,140,110,0.5,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-83,24.3,24.3,-14,5.9,5.1,3.7,140,100,0.9,CCS,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-87,-30,-30,17.3,-6.5,5.2,3,120,110,0.7,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-07,26.9,26.1,16.5,6.3,5.5,3.2,150,100,1,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+7-Jan,26.9,26.1,16.5,6.3,5.5,3.2,150,100,1,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-40,-29.5,-29.5,14.7,7.8,6,2.6,150,130,1.1,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-68,-27.7,-27.7,12.7,5.8,4.7,2.4,150,110,0.7,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-12,-30,-30,19.7,,5.7,3.6,120,100,1.4,CCS,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+12-Jan,-30,-30,19.7,,5.7,3.6,120,100,1.4,CCS,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-83,-41,-41,-16,6.7,6,4.3,150,100,1.4,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-00,-38.8,-38,-23,7.5,6.2,4.1,135,100,2.2,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-27,-27,-27,-18.5,,5.6,3.1,140,100,0.5,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-28,-36,-36,-16.8,8.6,7,4.1,160,100,1.3,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-30,-21,,-15,7.1,6.2,2.1,150,100,0.5,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-23,30.6,30.1,-12.4,7.9,5.1,3.4,150,110,0.6,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+27-Jan,-27,-27,-18.5,,5.6,3.1,140,100,0.5,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+28-Jan,-36,-36,-16.8,8.6,7,4.1,160,100,1.3,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+30-Jan,-21,,-15,7.1,6.2,2.1,150,100,0.5,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+23-Jan,30.6,30.1,-12.4,7.9,5.1,3.4,150,110,0.6,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-58,21.1,19.5,14.4,-8,6.2,3.6,140,110,0.4,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-20,-33.5,-33,-25,17.8,9.8,5.1,160,145,2.5,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-24,-44,-44,27.6,-17.5,14.4,4.8,140,110,4.3,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+20-Jan,-33.5,-33,-25,17.8,9.8,5.1,160,145,2.5,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+24-Jan,-44,-44,27.6,-17.5,14.4,4.8,140,110,4.3,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-39,-34,-33.2,22.8,12.8,9.9,4.1,140,120,2.3,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-39,-40,-40,-27,22,10.8,5,140,130,1.7,Indeterminate,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-93,29.4,29.4,-20,12.4,10.6,3.6,180,110,1.6,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-97,-52,-52,23.2,15,8.7,4.9,140,125,3.6,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-99,-37.8,-37,17.2,14.5,10,4.3,170,130,2.6,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-00,-33,-31.6,20.7,-16,12.6,4,140,120,1.5,CCS,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-18,-43.2,-42,-22,-12.5,9.8,3.9,150,120,2,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-19,-46,-43.6,24.6,20,11.1,5.5,160,130,5.3,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+18-Jan,-43.2,-42,-22,-12.5,9.8,3.9,150,120,2,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+19-Jan,-46,-43.6,24.6,20,11.1,5.5,160,130,5.3,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-44,-53,-53,15.6,14.7,10.9,6.7,235,110,5.1,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-58,34.9,34.9,-26,12.6,11.9,5.3,150,110,2.9,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-13,-37.6,-37,20.1,17.2,10.4,4.8,150,130,2.2,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-14,-42,-42,-29,-17,10.7,4.9,135,120,3.4,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-17,-43.8,-42.6,34.6,23.3,16.6,6.6,140,110,6,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+13-Jan,-37.6,-37,20.1,17.2,10.4,4.8,150,130,2.2,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+14-Jan,-42,-42,-29,-17,10.7,4.9,135,120,3.4,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+17-Jan,-43.8,-42.6,34.6,23.3,16.6,6.6,140,110,6,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-34,-41,-41,219,-14.5,9.1,4.6,135,130,2.3,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-63,-43,-43,-30,-19,12.9,4.6,120,120,1.6,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-65,-31,-29.2,-26.5,22.8,11.9,5.8,155,145,2.7,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-70,38.4,36.8,-23,-23,13,6.1,180,140,3.6,CCS,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-83,-50,-47.7,-33.6,-23.5,13.3,6.9,160,150,7.6,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-21,-39,-37,-26.5,-17.5,12.2,5.8,150,130,3.3,Indeterminate,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-27,37.7,35.4,22.8,20.5,11.1,5.9,130,140,3.6,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+21-Jan,-39,-37,-26.5,-17.5,12.2,5.8,150,130,3.3,Indeterminate,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+27-Jan,37.7,35.4,22.8,20.5,11.1,5.9,130,140,3.6,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-84,-41.3,-40,-28.5,-21,15.6,5.1,150,120,3.8,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-72,39,39,-24.6,-19.3,11.2,5.4,160,130,4.1,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-73,30,29.1,26.1,-22,13.3,5.3,170,140,2.6,,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-06,33.5,33.5,-20,-20,11.3,5.6,170,130,3,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-07,-22.5,-21.1,-18.4,-10.4,6.8,3.2,130,120,0.6,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-08,-45.5,-44.1,34.4,-14,13.2,5.8,140,110,2.4,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+6-Jan,33.5,33.5,-20,-20,11.3,5.6,170,130,3,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+7-Jan,-22.5,-21.1,-18.4,-10.4,6.8,3.2,130,120,0.6,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+8-Jan,-45.5,-44.1,34.4,-14,13.2,5.8,140,110,2.4,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-37,-47,-45.6,18.3,18.3,13.2,5.5,245,120,3.7,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-39,-40.3,-39,-27.4,15.8,12.4,5.7,150,110,3.1,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-53,49.5,49.5,29.4,18.2,7.1,8.4,170,110,14,CCS,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-29,33,33,,17.7,12.1,6.5,170,130,2.6,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+29-Jan,33,33,,17.7,12.1,6.5,170,130,2.6,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-56,33.5,31.8,20.8,20.8,11,4.7,170,140,2.1,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-80,45.7,43,22.7,18.1,12.6,5.4,175,120,4.5,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-48,34.7,34.7,21.8,-17.5,13.3,5.4,160,130,2.9,Obsidian,Rosegate series,Rosegate,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
@@ -11184,23 +11184,23 @@ Jan-36,-40.9,-40,-29,-19,13.7,5.7,160,110,3.1,Obsidian,Rosegate series,Rosegate,
 Jan-85,-36,-35.2,-27,22.7,13.6,6.2,170,140,2.6,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-77,43,43,20.4,16.6,12.9,6.6,170,130,4.8,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-80,-33.5,-33.5,224,-17,10.6,4,160,150,1.7,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-26,36.5,35.8,21.4,18.6,13.3,6.9,180,130,4.6,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-07,-32.7,-32,-21,17,12.6,5.6,160,120,2.6,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-27,-34.5,-32.9,25.7,-24,9.8,4.4,130,140,3.1,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+26-Jan,36.5,35.8,21.4,18.6,13.3,6.9,180,130,4.6,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+7-Jan,-32.7,-32,-21,17,12.6,5.6,160,120,2.6,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+27-Jan,-34.5,-32.9,25.7,-24,9.8,4.4,130,140,3.1,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-68,33.3,32.4,16.5,14.6,8.8,4.5,160,120,2.1,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-88,-33.2,-31.9,-20.6,16.7,,4.7,160,110,2.5,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-92,41,39.9,23.1,21.4,12.6,6.1,170,150,4.4,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-93,-23.3,-23.3,-13.6,11.1,9.5,4.1,,120,1,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-01,-66.6,-65.1,25.7,18.9,12.8,6.4,170,120,9.1,CCS,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+1-Jan,-66.6,-65.1,25.7,18.9,12.8,6.4,170,120,9.1,CCS,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-44,-40.5,-39.1,20.4,17.7,10.8,6.1,160,130,3.7,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-47,-25,-25,-17.5,15.2,10.1,4.1,180,120,1.4,Indeterminate,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-66,31.4,30.2,23.7,19.3,12.2,6.3,160,130,3.2,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-08,-37,-37,-27.5,25.4,11,4.9,150,110,3.2,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-15,-39,-39,18.7,-11,7.6,4.7,170,135,1.8,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+8-Jan,-37,-37,-27.5,25.4,11,4.9,150,110,3.2,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+15-Jan,-39,-39,18.7,-11,7.6,4.7,170,135,1.8,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-63,-30,-30,-20,10.3,8.4,3.8,145,110,0.6,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-28,-26,-26,19.5,19.5,10.2,5.2,150,140,1.7,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-29,28,28,24.5,22.8,11.3,4.9,150,140,2.7,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-11,-32,-30.3,20.7,20.7,11.8,4.1,180,145,1.8,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+28-Jan,-26,-26,19.5,19.5,10.2,5.2,150,140,1.7,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+29-Jan,28,28,24.5,22.8,11.3,4.9,150,140,2.7,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+11-Jan,-32,-30.3,20.7,20.7,11.8,4.1,180,145,1.8,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-66,-38.2,-36.6,23.5,-19.5,15,5.6,150,110,4.2,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-72,-37,-35,21.4,14,11.5,6.3,180,110,1.8,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-74,34.5,33.5,23.5,22.7,14.1,5.4,180,130,3,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
@@ -11211,34 +11211,34 @@ Jan-53,-38.8,-37.7,-25.3,-20,9.3,5.6,140,130,4.1,Obsidian,Elko Corner Notched,El
 Jan-77,24,24,20.5,-15.5,11.1,4.7,140,120,1.6,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-86,41.8,39.3,25.7,-21.2,11.9,6,130,120,4,CCS,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-96,-34.3,-33.1,-22.5,-22.5,10.6,6.4,180,140,2.6,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-20,48.3,48.3,16.3,15.7,12.3,5.8,170,150,3.6,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+20-Jan,48.3,48.3,16.3,15.7,12.3,5.8,170,150,3.6,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-51,-29.5,-29.5,20.8,-14,8.6,4.5,135,110,1.4,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-79,-43.5,-40.6,-24.5,-16,13,5,140,110,3.8,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-86,-34,-31.5,-25.2,15.2,13,5.1,190,120,3,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-25,36.2,34,20.9,15.3,13.2,5.5,180,150,2.4,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-26,-34.5,-28.5,22.7,17.5,15.6,5,200,120,2.5,CCS,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+25-Jan,36.2,34,20.9,15.3,13.2,5.5,180,150,2.4,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+26-Jan,-34.5,-28.5,22.7,17.5,15.6,5,200,120,2.5,CCS,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-35,34,31.5,-24.2,19.2,13.7,4.9,170,140,3.6,CCS,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-36,-40.5,-34.6,-24.5,-19,11.7,6.1,140,120,3.4,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-10,40.2,37.5,22.3,-15,9.5,4.7,160,120,2.7,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-15,33.8,29.6,16.1,16.1,10.2,4.2,190,120,2.1,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+10-Jan,40.2,37.5,22.3,-15,9.5,4.7,160,120,2.7,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+15-Jan,33.8,29.6,16.1,16.1,10.2,4.2,190,120,2.1,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-71,,-37.9,19.8,16.8,11.7,4.8,160,130,3.3,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-78,-33.5,-28.3,-23,20.6,13.7,5.4,170,120,2.6,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-93,28.6,26.8,20.8,-17.3,10.9,4.6,160,140,1.6,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-10,42.5,39.7,19.7,17.8,12.8,5,165,115,3.5,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-14,-24.5,-23,-18.5,11.7,6.7,2.6,150,130,0.5,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+10-Jan,42.5,39.7,19.7,17.8,12.8,5,165,115,3.5,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+14-Jan,-24.5,-23,-18.5,11.7,6.7,2.6,150,130,0.5,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-46,-42,-38.6,-24,18.8,15.4,5.9,150,120,4,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-57,-30.7,-28.4,-18.5,18.5,10.2,4.5,170,150,1.6,Indeterminate,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-71,35,32.5,-26,-24,12.2,4.5,160,140,2.9,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-15,42.4,36.8,-30,-23,13.8,5.4,140,125,3.8,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+15-Jan,42.4,36.8,-30,-23,13.8,5.4,140,125,3.8,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-43,-43.2,-40,27.6,17.3,9.8,5.2,160,125,2.4,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-44,-36.3,-33.9,22.9,13.4,10.6,5,140,120,3.3,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-87,35.6,32.1,23.2,21.7,12.8,4.3,150,140,2.8,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-18,-32.5,-27.9,-24.6,21.3,16,6,160,140,3.5,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-22,33.1,28.7,20,-14.3,11.5,4.8,170,125,1.8,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-26,-33.5,-30,-19.7,-16.4,2.6,4.9,,110,2.7,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-18,-42.2,-38,-27.5,-27.5,10.8,6.4,135,130,4.4,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-21,33.6,31.3,-15.5,15.3,10.5,5.2,190,120,1.6,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-26,36.7,33.8,-24.5,19.1,12.6,5.1,130,130,2.5,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+18-Jan,-32.5,-27.9,-24.6,21.3,16,6,160,140,3.5,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+22-Jan,33.1,28.7,20,-14.3,11.5,4.8,170,125,1.8,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+26-Jan,-33.5,-30,-19.7,-16.4,2.6,4.9,,110,2.7,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+18-Jan,-42.2,-38,-27.5,-27.5,10.8,6.4,135,130,4.4,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+21-Jan,33.6,31.3,-15.5,15.3,10.5,5.2,190,120,1.6,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+26-Jan,36.7,33.8,-24.5,19.1,12.6,5.1,130,130,2.5,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-35,-38.5,-34.7,-21.8,-19.2,13.3,4.6,160,140,3.5,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-65,-35,-31.8,20.3,-16,11.8,5.5,180,130,2.4,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-78,-36.3,-33.4,-24.5,18.5,11.8,4.4,150,130,3,Obsidian,Elko Corner Notched,Elko Corner-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
@@ -11257,39 +11257,39 @@ Jan-48,42.5,38.5,18.4,17.9,11.8,5.3,200,130,3.4,Obsidian,Elko Corner Notched,Elk
 Jan-76,34.7,32.5,-20,-20,11.3,3.4,,120,1.8,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-77,-37,-33.2,-16.8,-13.5,11.3,5,190,110,1.7,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-91,-43.2,-38.3,18.8,-23.2,14.7,6.8,,130,4.1,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-28,-43.7,-41.1,-26.5,13.3,13.8,5.3,150,80,4,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+28-Jan,-43.7,-41.1,-26.5,13.3,13.8,5.3,150,80,4,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-79,-34.5,31.6,25.6,-10,9,4.9,150,80,3.5,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-47,41.3,37,-18.5,-12.5,11.3,4.7,180,100,2.2,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-10,42.6,36.6,28,-19.5,17.8,6.5,170,95,4.6,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-23,-34.8,-34.8,18.9,,11.5,6,180,90,3.1,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+10-Jan,42.6,36.6,28,-19.5,17.8,6.5,170,95,4.6,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+23-Jan,-34.8,-34.8,18.9,,11.5,6,180,90,3.1,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-43,-40,-38,-23.5,-23.5,13.8,5.4,190,160,3.4,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-59,-44,-44,25.2,25.2,15.2,6,190,180,4.2,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-60,28.1,27.6,23.4,20.9,10.2,3.8,170,165,2.2,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-23,-34.5,-31,-25.5,-25.5,11.3,4.2,180,180,2.2,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+23-Jan,-34.5,-31,-25.5,-25.5,11.3,4.2,180,180,2.2,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-34,35.6,35.6,-22.2,-18,12.6,5.3,180,160,3.1,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-38,40.9,40.9,26.4,26.4,17.6,6.8,200,180,5,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-86,30.7,25.1,24.9,24.9,11.3,3.6,180,180,1.6,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-91,-35,-32.5,20.8,20.8,13.2,5.8,200,160,2.5,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-08,-43,34.7,-26.5,-26.5,10.8,4.5,180,180,3.1,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-12,-40.5,-39.1,20.2,-18,11.7,5.9,180,160,3.7,Indeterminate,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+8-Jan,-43,34.7,-26.5,-26.5,10.8,4.5,180,180,3.1,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+12-Jan,-40.5,-39.1,20.2,-18,11.7,5.9,180,160,3.7,Indeterminate,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-90,42.7,40.2,21.8,21.8,11.6,4.9,180,160,3.7,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-05,-40,-37.7,23.7,23.7,14.3,5.8,200,170,4.1,CCS,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-08,30.8,30.4,17.1,11.4,11.1,4.8,210,95,1.8,CCS,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-10,-37,-32.8,24.5,24.5,12.4,4.7,180,170,1.4,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+5-Jan,-40,-37.7,23.7,23.7,14.3,5.8,200,170,4.1,CCS,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+8-Jan,30.8,30.4,17.1,11.4,11.1,4.8,210,95,1.8,CCS,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+10-Jan,-37,-32.8,24.5,24.5,12.4,4.7,180,170,1.4,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-78,36.2,32,-17,-17,7.9,3.7,180,180,1.6,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-79,35.7,33.7,-21.5,-21.5,8.5,3.7,180,175,1.7,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-87,-40.3,-37.2,23.8,23.8,9.5,3.5,160,180,3.2,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-88,-49.6,-45.1,-19,-19,10.7,7.4,180,160,5.3,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-91,-43,-43,25.8,25.8,12.4,7.1,170,160,3.8,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-66,28.4,27.3,-17.5,-17.5,11.2,4.4,190,160,1.6,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-12,29.2,29.2,20.1,18.5,9.7,4.3,160,160,1.7,CCS,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+12-Jan,29.2,29.2,20.1,18.5,9.7,4.3,160,160,1.7,CCS,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-45,-39,-36.4,-22.5,-22.5,11.2,6.9,170,160,3.5,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-59,26.8,26.8,18.8,18.8,9.2,5.1,180,160,1.8,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-33,41.3,37.7,17,17,13.4,4.4,185,170,2.2,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-17,30.5,30.5,-21,-21,11.8,4.4,170,160,2,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-23,-46.5,-45,17.4,14.8,14.1,7,240,155,5.4,Indeterminate,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+17-Jan,30.5,30.5,-21,-21,11.8,4.4,170,160,2,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+23-Jan,-46.5,-45,17.4,14.8,14.1,7,240,155,5.4,Indeterminate,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-66,-34,-32,17.1,15,,4.5,,,2.3,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-31,40.8,38.3,15,-14,,4.8,,,3.1,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+31-Jan,40.8,38.3,15,-14,,4.8,,,3.1,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-34,-29.5,-27.9,19.6,19.6,,3.7,,,1.6,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-68,-34,,14.4,14.4,,4.5,,,1.5,Obsidian,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-87,-48.3,-47.3,24.3,10.2,,7.6,,,7.7,CCS,Elko Eared,Elko Eared,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
@@ -11304,20 +11304,20 @@ Jan-52,-37.5,-33.3,21.7,14.6,,7.5,,90,3,Indeterminate,Gatecliff Split Stem,Gatec
 Jan-67,-44,-43.2,17.3,11,,8.5,,,4.4,Obsidian,Gatecliff Split Stem,Gatecliff Split Stem,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-98,-33.3,-30,17.9,-16.8,16.2,6.2,,,2.4,CCS,Gatecliff Contracting Stem,Gatecliff Contracting Stem,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-50,53.6,53.6,21.7,12.3,,7.7,,,7.3,Obsidian,Northern Side-Notched,Northern Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-07,-75,-72.7,32.3,10.3,,8,,,9.1,Obsidian,Northern Side-Notched,Northern Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-24,41.1,40.6,15.3,10.5,,4.7,,,2.4,Obsidian,Northern Side-Notched,Northern Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+7-Jan,-75,-72.7,32.3,10.3,,8,,,9.1,Obsidian,Northern Side-Notched,Northern Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+24-Jan,41.1,40.6,15.3,10.5,,4.7,,,2.4,Obsidian,Northern Side-Notched,Northern Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-72,25,25,21.7,14,14.8,4.5,170,80,2.2,Obsidian,Northern Side-Notched,Northern Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-73,55.7,55.7,26.2,15.2,20,8.5,240,80,10.4,Obsidian,Northern Side-Notched,Northern Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-29,-81.8,-81.8,31.3,24.6,21.2,9.4,190,110,11.7,Obsidian,Northern Side-Notched,Northern Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+29-Jan,-81.8,-81.8,31.3,24.6,21.2,9.4,190,110,11.7,Obsidian,Northern Side-Notched,Northern Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-62,,-63,19.3,8.8,14.5,5.4,235,95,6.2,Obsidian,Northern Side-Notched,Northern Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-27,-62.5,-62.5,33,16.8,19.5,8.2,230,90,12.3,Obsidian,Northern Side-Notched,Northern Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-09,38.4,38.4,-21,13,14.4,9.4,250,90,6.2,Obsidian,Northern Side-Notched,Northern Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+27-Jan,-62.5,-62.5,33,16.8,19.5,8.2,230,90,12.3,Obsidian,Northern Side-Notched,Northern Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+9-Jan,38.4,38.4,-21,13,14.4,9.4,250,90,6.2,Obsidian,Northern Side-Notched,Northern Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-65,45,45,16.1,7,10.9,5.8,230,85,3.5,Obsidian,Northern Side-Notched,Northern Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-03,32.7,31.5,14.9,13.6,,5.1,,,1.7,Obsidian,Northern Side-Notched,Northern Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-09,32.7,31.1,14.3,14.3,,4.6,,,1.6,Obsidian,Northern Side-Notched,Northern Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-25,35,33.9,15.4,12.1,,5.7,,,2.4,Obsidian,Northern Side-Notched,Northern Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+3-Jan,32.7,31.5,14.9,13.6,,5.1,,,1.7,Obsidian,Northern Side-Notched,Northern Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+9-Jan,32.7,31.1,14.3,14.3,,4.6,,,1.6,Obsidian,Northern Side-Notched,Northern Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+25-Jan,35,33.9,15.4,12.1,,5.7,,,2.4,Obsidian,Northern Side-Notched,Northern Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-50,37,35.8,13.9,13.9,,3.8,,,1.7,Obsidian,Northern Side-Notched,Northern Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-19,34.7,30.1,17.3,14.8,,4.6,,,2.1,Obsidian,Northern Side-Notched,Northern Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+19-Jan,34.7,30.1,17.3,14.8,,4.6,,,2.1,Obsidian,Northern Side-Notched,Northern Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-79,-28,-28,13.5,10.8,,3.9,,,0.9,Obsidian,Northern Side-Notched,Northern Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-92,-29,-29,12,,,3.3,,,1.2,Obsidian,Northern Side-Notched,Northern Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-94,-29,-29,11.2,,,3.2,,,1,Obsidian,Northern Side-Notched,Northern Side-notched,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
@@ -11332,32 +11332,32 @@ Jan-59,-26,-26,17.1,9.6,7.9,3.7,140,120,0.7,Obsidian,Northern Side-Notched,North
 Jan-92,23,23,17.5,7.7,6.8,4,150,100,1.1,Obsidian,Humboldt Series,Humboldt,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-94,-38,-37,13.2,-6.3,5.4,3.1,140,100,0.6,Obsidian,Humboldt Series,Humboldt,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-85,24.7,23,-18.2,-8.5,6.8,3.9,150,100,1,Obsidian,Humboldt Series,Humboldt,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-28,-30,-30,20.1,-10,7.5,3.6,120,110,1.2,Obsidian,Humboldt Series,Humboldt,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-12,22.1,22.1,11.6,-7.5,6.3,2.8,180,90,0.5,Obsidian,Humboldt Series,Humboldt,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-26,17.7,17.7,10.2,8.4,7.5,3.5,190,100,0.3,Obsidian,Humboldt Series,Humboldt,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+28-Jan,-30,-30,20.1,-10,7.5,3.6,120,110,1.2,Obsidian,Humboldt Series,Humboldt,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+12-Jan,22.1,22.1,11.6,-7.5,6.3,2.8,180,90,0.5,Obsidian,Humboldt Series,Humboldt,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+26-Jan,17.7,17.7,10.2,8.4,7.5,3.5,190,100,0.3,Obsidian,Humboldt Series,Humboldt,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-67,-16,-14.6,12.3,9.3,7.4,2.6,170,120,0.2,Obsidian,Humboldt Series,Humboldt,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-41,-32.5,-32.5,-17.5,9,8,3.2,140,110,0.7,Obsidian,Humboldt Series,Humboldt,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-64,32.5,32.5,16.5,8,6.6,4.3,130,120,1.6,Obsidian,Humboldt Series,Humboldt,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-91,-34,-34,17,8.9,8.2,3.5,130,110,1.6,Obsidian,Humboldt Series,Humboldt,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-08,-26,-26,15.7,-6.9,7.1,2.9,140,100,0.7,CCS,Humboldt Series,Humboldt,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+8-Jan,-26,-26,15.7,-6.9,7.1,2.9,140,100,0.7,CCS,Humboldt Series,Humboldt,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-68,-17.2,-15.8,14,8.8,7,3.5,180,120,0.5,Indeterminate,Humboldt Series,Humboldt,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-86,26.2,26.2,10.5,6.8,5.2,2.8,180,105,0.6,Obsidian,Humboldt Series,Humboldt,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-60,-26,-26,-21.4,8.5,7.7,4,140,100,1,Obsidian,Humboldt Series,Humboldt,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-79,-30,-30,-18.5,9.4,8.8,3.5,150,110,1.1,Obsidian,Humboldt Series,Humboldt,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-34,24.4,24.4,14.2,4.9,4.7,3.8,160,90,0.9,Obsidian,Great Basin Stemmed,Western Stemmed,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-03,-27,-24.5,-18.5,9.9,8.8,2.8,,105,1,Obsidian,Great Basin Stemmed,Western Stemmed,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+3-Jan,-27,-24.5,-18.5,9.9,8.8,2.8,,105,1,Obsidian,Great Basin Stemmed,Western Stemmed,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-34,18.7,18.7,9.2,5.8,5.8,3,190,90,0.2,Indeterminate,Great Basin Stemmed,Western Stemmed,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-86,-28,-28,17.1,-8.4,6.8,3.2,130,110,1.2,Obsidian,Great Basin Stemmed,Western Stemmed,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-22,21.4,21.4,9.3,4.3,4.2,2.4,170,90,0.2,Obsidian,Great Basin Stemmed,Western Stemmed,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+22-Jan,21.4,21.4,9.3,4.3,4.2,2.4,170,90,0.2,Obsidian,Great Basin Stemmed,Western Stemmed,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-84,-34,-32,-24,-24,10,4.3,150,140,1.2,Obsidian,Great Basin Stemmed,Western Stemmed,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-90,-45,-45,20.3,15.2,11.5,5.6,180,120,4.2,Obsidian,Great Basin Stemmed,Western Stemmed,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-18,,,,-25,11.8,5,,140,0.8,Obsidian,Great Basin Stemmed,Western Stemmed,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+18-Jan,,,,-25,11.8,5,,140,0.8,Obsidian,Great Basin Stemmed,Western Stemmed,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-50,,,,23.8,7.7,3.9,,150,0.9,Obsidian,Great Basin Stemmed,Western Stemmed,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-44,-44,-42.6,20.5,-20,9.7,5.2,150,150,3.7,Obsidian,Great Basin Stemmed,Western Stemmed,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-38,-34,-34,-25,-11,9.9,5.2,130,110,2.8,Obsidian,Great Basin Concave Base,Great Basin Concave Base,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-65,-52.3,-49.2,22.2,-17.5,12.2,4.3,180,150,3.7,Obsidian,Great Basin Concave Base,Great Basin Concave Base,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-20,-33.5,-33.5,22.8,-15,8.7,4.2,140,120,1.3,Obsidian,Great Basin Concave Base,Great Basin Concave Base,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
-Jan-29,-33,-32.1,-13.5,-10.5,7.8,2.8,170,140,1,Obsidian,Great Basin Concave Base,Great Basin Concave Base,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+20-Jan,-33.5,-33.5,22.8,-15,8.7,4.2,140,120,1.3,Obsidian,Great Basin Concave Base,Great Basin Concave Base,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
+29-Jan,-33,-32.1,-13.5,-10.5,7.8,2.8,170,140,1,Obsidian,Great Basin Concave Base,Great Basin Concave Base,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Harney
 Jan-46,45,45,-23.5,15.7,9.7,4.5,155,120,2.6,Obsidian,Great Basin Concave Base,Great Basin Concave Base,Table S2.98. Roaring Springs.xlsx,35HA433,Northern,Lassen
 1-169389,-25,-25,14.7,10.2,8.3,2.7,140,120,0.3,Obsidian,Cottonwood Leaf shaped,Cottonwood,Table S2.99. Rodriguez.xlsx,CA-LAS-194,Northern,Lassen
 1-169657,-35,-33.1,18.2,14,10.6,4.8,190,120,2,Obsidian,Cottonwood Leaf shaped,Cottonwood,Table S2.99. Rodriguez.xlsx,CA-LAS-194,Northern,Lassen
