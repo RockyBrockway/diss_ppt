@@ -1,0 +1,78 @@
+---
+title: "PPT_CT"
+author: "Rocky Brockway"
+date: "2024-07-11"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+library(dplyr)
+library(ggplot2)
+```
+
+
+
+
+```{r}
+#pull in data compiled from various sites throughout the Great Basin (Thomas et al. nd - Alta Toquima), Ruby Pipeline (Hildebrandt et al. 2016), Last Supper Cave (Smith et al. 2015)  
+
+data<-read.csv("PPT_data.csv")
+```
+
+```{r}
+# get a list of variable names
+ls(data)
+
+#create a vector of variable names that I want to replace any negative or empty values with NA
+
+cols_to_check <- c("DSA", "LengthAxial", "LengthMax",  "PSA", "Thickness", "WidthBasal", "WidthMax", "WidthNeck")  
+
+#attribute value must be greater than 0, otherwise it's na - I only want complete measurements
+data[cols_to_check] <- lapply(data[cols_to_check], function(x) ifelse(x < 0, NA, x))
+                              
+#check that it worked
+na.omit(data[data[2:7] < 0,])
+```
+
+
+```{r}
+data%>%
+  filter(
+  PointType2=="Elko Corner-notched"|PointType2=="Elko Eared"|PointType2=="Elko Series")%>%
+  filter(Area_Jennings!="-"& Area_Jennings!="Western/Southwestern")%>%
+  ggplot(aes(x=factor(Area_Jennings), y = LengthMax)) +
+  geom_boxplot()+
+  theme_minimal()+
+ theme(plot.background = element_rect(color ="black", linewidth = 1))+
+  labs(title = "Boxplot of Maximum Length by Subarea", 
+       y = "Max Length",
+       x = "Jennings Great Basin Subarea")
+
+
+
+data%>%
+  filter(
+  PointType2=="Elko Corner-notched"|PointType2=="Elko Eared"|PointType2=="Elko Series")%>%
+  filter(Area_Jennings!="-"& Area_Jennings!="Western/Southwestern")%>%
+  filter(WidthMax < 200)%>%
+  ggplot(aes(x=factor(Area_Jennings), y = WidthMax)) +
+  geom_boxplot()+
+  theme_minimal()+
+ theme(plot.background = element_rect(color ="black", linewidth = 1))+
+  labs(title = "Boxplot of Maximum Width by Subarea", 
+       y = "Max Width",
+       x = "Jennings Great Basin Subarea")
+
+
+
+```
+```{r}
+range(data$LengthMax, na.rm = T)
+range(data$WidthMax, na.rm = T)
+```
+
