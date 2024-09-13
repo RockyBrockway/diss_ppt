@@ -13,6 +13,9 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 library(dplyr)
 library(ggplot2)
+library(tidyr)
+library(GGally)
+library(forcats)
 ```
 
 
@@ -25,12 +28,27 @@ data<-read.csv("PPT_data.csv")
 ```
 
 ```{r}
+str(data)
+```
+
+```{r}
+#fix the data types for thickness, DSA, and Area
+data$Thickness<-as.numeric(data$Thickness)
+data$DSA<-as.integer(data$DSA)
+data$Area_Jennings<-as.factor(data$Area_Jennings)
+data$PointType3<-as.factor(data$PointType3)
+levels(data$PointType3)
+data$PointType3<-factor(data$PointType3, levels = c( "-", "Carson Point ", "Desert Series", "Rosegate Series",  "Elko Series", "Gatecliff Series", "Large Side-notched", "Pinto Series", "Humboldt Series", "Great Basin Concave Base", "Great Basin Stemmed"))
+```
+
+
+```{r}
 # get a list of variable names
 ls(data)
 
 #create a vector of variable names that I want to replace any negative or empty values with NA
 
-cols_to_check <- c("DSA", "LengthAxial", "LengthMax",  "PSA", "Thickness", "WidthBasal", "WidthMax", "WidthNeck")  
+cols_to_check <- c("LengthAxial", "LengthMax", "WidthMax", "WidthBasal", "WidthNeck", "Thickness", "DSA", "PSA")  
 
 #attribute value must be greater than 0, otherwise it's na - I only want complete measurements
 data[cols_to_check] <- lapply(data[cols_to_check], function(x) ifelse(x < 0, NA, x))
@@ -40,39 +58,1212 @@ na.omit(data[data[2:7] < 0,])
 ```
 
 
+
 ```{r}
-data%>%
-  filter(
-  PointType2=="Elko Corner-notched"|PointType2=="Elko Eared"|PointType2=="Elko Series")%>%
-  filter(Area_Jennings!="-"& Area_Jennings!="Western/Southwestern")%>%
-  ggplot(aes(x=factor(Area_Jennings), y = LengthMax)) +
-  geom_boxplot()+
-  theme_minimal()+
- theme(plot.background = element_rect(color ="black", linewidth = 1))+
-  labs(title = "Boxplot of Maximum Length by Subarea", 
-       y = "Max Length",
-       x = "Jennings Great Basin Subarea")
+#Because several of the datasets included non-negative incomplete measurements, let's filter those datasets out
+data<-data %>%
+  filter(Exclude_LW!="Yes")
+```
 
 
 
-data%>%
-  filter(
-  PointType2=="Elko Corner-notched"|PointType2=="Elko Eared"|PointType2=="Elko Series")%>%
-  filter(Area_Jennings!="-"& Area_Jennings!="Western/Southwestern")%>%
-  filter(WidthMax < 200)%>%
-  ggplot(aes(x=factor(Area_Jennings), y = WidthMax)) +
-  geom_boxplot()+
-  theme_minimal()+
- theme(plot.background = element_rect(color ="black", linewidth = 1))+
-  labs(title = "Boxplot of Maximum Width by Subarea", 
-       y = "Max Width",
-       x = "Jennings Great Basin Subarea")
+```{r}
+# Function to apply Shapiro-Wilk test to each trait within each PointType3 group
+test_normality <- function(x) {
+  if (length(na.omit(x)) > 2) {  # Shapiro-Wilk test requires at least 3 non-NA observations
+    return(shapiro.test(x)$p.value)
+  } else {
+    return(NA)  # Return NA if not enough data points
+  }
+}
 
+# Apply the normality test to each trait within each PointType3 group
+normality_results <- data %>%
+  group_by(PointType3) %>%
+  summarise(across(2:9, ~test_normality(.), .names = "p_value_{col}"))
+
+# Display the normality test results
+print(normality_results)
+
+```
+
+
+```{r}
+# List of traits to plot
+traits <- c("LengthMax", "LengthAxial", "WidthMax", "WidthBasal", "WidthNeck", "Thickness", "DSA", "PSA")
+
+# Filter the data for the selected point types
+filtered_data <- data %>%
+  filter(PointType3 %in% c("Elko Series", "Gatecliff Series", "Rosegate Series"))
+
+# Loop through each trait and create density plots
+for (trait in traits) {
+  p <- ggplot(filtered_data, aes(x = .data[[trait]], fill = PointType3)) +
+    geom_density(alpha = 0.5) +
+    labs(
+      title = paste("Density Plot of", trait, "by Point Type (Selected Series)"),
+      x = trait,
+      y = "Density",
+      fill = "Point Type"
+    ) +
+    theme_minimal()
+  
+  print(p)
+}
+
+```
+
+
+```{r}
+# Various outliers were noted during exploratory data analysis, and many of them appeared to be related to either additional incomplete measurements (too small to be complete) or transcription errors (decimal issues or way too large). After reviewing various methods and the effect of their implementation, I have decided to use an IQR method that constructs different fences for the upper and lower portion of the data when split at the median. 
+
+# The function first divides the data into two halves: below the median and above the median. 
+# For each half, it calculates the Interquartile Range (IQR) using the first (Q1) and third (Q3) quartiles.
+# Outliers are then identified using two different multipliers applied to the IQR for the lower and upper halves:
+# - The `lower_multiplier` determines how far below Q1 a value must be to be considered an outlier in the lower half.
+# - The `upper_multiplier` determines how far above Q3 a value must be to be considered an outlier in the upper half.
+#
+# Any values that fall outside these calculated bounds (fences) are replaced with `NA`.
+# This method allows for a flexible approach to outlier removal, accounting for potential asymmetry in the data distribution.
+
+#Here's an example to show how the function works to trim ouliers: 
+
+# Function to remove outliers using median-split IQR method
+demo_outliers_median_split <- function(x, lower_multiplier = 1.5, upper_multiplier = 3) {
+  # Split the data at the median
+  median_value <- median(x, na.rm = TRUE)
+  
+  # Data below the median
+  lower_half <- x[x <= median_value]
+  Q1_lower <- quantile(lower_half, 0.25, na.rm = TRUE)
+  Q3_lower <- quantile(lower_half, 0.75, na.rm = TRUE)
+  IQR_lower <- Q3_lower - Q1_lower
+  
+  # Data above the median
+  upper_half <- x[x > median_value]
+  Q1_upper <- quantile(upper_half, 0.25, na.rm = TRUE)
+  Q3_upper <- quantile(upper_half, 0.75, na.rm = TRUE)
+  IQR_upper <- Q3_upper - Q1_upper
+  
+  # Calculate fences for lower half
+  lower_bound <- Q1_lower - lower_multiplier * IQR_lower
+  
+  # Calculate fences for upper half
+  upper_bound <- Q3_upper + upper_multiplier * IQR_upper
+  
+  # Replace values outside the fences with NA
+  x <- replace(x, x < lower_bound & x <= median_value, NA)
+  x <- replace(x, x > upper_bound & x > median_value, NA)
+  
+  return(x)
+}
+
+# Filter and clean the data for Elko Series and LengthMax
+example_data <- filtered_data %>%
+  filter(PointType3 == "Elko Series") %>%
+  select(LengthMax) %>%
+  pull(LengthMax) %>%  # Extract as numeric vector
+  as.numeric() %>%     # Ensure numeric type
+  na.omit()            # Remove any NA values
+
+# Generate all combinations of lower and upper multipliers (1.5, 3)
+multiplier_settings <- expand.grid(
+  lower_multiplier = c(1.5, 3),
+  upper_multiplier = c(1.5, 3)
+)
+
+# Apply the outlier removal function for each combination of multiplier settings
+results <- lapply(seq_len(nrow(multiplier_settings)), function(i) {
+  settings <- multiplier_settings[i, ]
+  
+  # Apply the demonstration outlier removal function
+  cleaned_data <- demo_outliers_median_split(
+    example_data,
+    lower_multiplier = settings$lower_multiplier,
+    upper_multiplier = settings$upper_multiplier
+  )
+  
+  # Identify the inliers and outliers
+  outlier_labels <- ifelse(is.na(cleaned_data), 
+                           ifelse(example_data > median(example_data), "Upper Outlier", "Lower Outlier"), 
+                           "Inlier")
+  
+  # Create a dataframe with results
+  data.frame(
+    Value = example_data, 
+    Cleaned_Value = cleaned_data, 
+    Outlier_Labels = outlier_labels,
+    Lower_Multiplier = settings$lower_multiplier,
+    Upper_Multiplier = settings$upper_multiplier
+  )
+})
+
+# Combine results into one dataframe
+combined_results <- do.call(rbind, results)
+
+# Convert multipliers to a factor for better plotting
+combined_results$Multiplier_Combo <- paste0(
+  "Lower: ", combined_results$Lower_Multiplier, ", Upper: ", combined_results$Upper_Multiplier
+)
+
+# Plot the comparison of outlier identification across multiplier settings
+ggplot(combined_results, aes(x = Multiplier_Combo, y = Value, color = Outlier_Labels)) +
+  geom_jitter(width = 0.2, alpha = 0.7) +  # Jitter points for visibility
+  geom_boxplot(outlier.shape = NA, fill = "white") +  # Boxplot without outliers
+  scale_color_manual(values = c("black", "blue", "red")) +  # Color for inliers, lower, and upper outliers
+  facet_wrap(~ Multiplier_Combo) +  # Separate facets for each multiplier combination
+  labs(title = "Effect of Different IQR Multipliers on Outlier Identification (LengthMax for Elko Series)",
+       y = "LengthMax",
+       color = "Outlier Type") +
+  theme_minimal() +
+  theme(axis.text.x = element_blank())+  # Remove x-axis labels
+  theme(axis.title.x = element_blank())
+```
+
+
+
+
+
+
+```{r}
+# The results of the demo suggest we should probably use a larger multiplier for the upper fence and a smaller multiplier for the lower fence. This will allow us to more strictly discriminate the lower half of the dataset, which is what I'm more concerned about in terms of validity. 
+
+# Function to remove outliers using median-split IQR method
+remove_outliers_median_split <- function(x, lower_multiplier, upper_multiplier) {
+  # Split the data at the median
+  median_value <- median(x, na.rm = TRUE)
+  
+  # Data below the median
+  lower_half <- x[x <= median_value]
+  Q1_lower <- quantile(lower_half, 0.25, na.rm = TRUE)
+  Q3_lower <- quantile(lower_half, 0.75, na.rm = TRUE)
+  IQR_lower <- Q3_lower - Q1_lower
+  
+  # Data above the median
+  upper_half <- x[x > median_value]
+  Q1_upper <- quantile(upper_half, 0.25, na.rm = TRUE)
+  Q3_upper <- quantile(upper_half, 0.75, na.rm = TRUE)
+  IQR_upper <- Q3_upper - Q1_upper
+  
+  # Calculate fences for lower half
+  lower_bound <- Q1_lower - lower_multiplier * IQR_lower
+  
+  # Calculate fences for upper half
+  upper_bound <- Q3_upper + upper_multiplier * IQR_upper
+  
+  # Replace values outside the fences with NA
+  x <- replace(x, x < lower_bound & x <= median_value, NA)
+  x <- replace(x, x > upper_bound & x > median_value, NA)
+  
+  return(x)
+}
+
+```
+
+
+
+```{r}
+# List of traits to apply the function to
+traits <- c("LengthMax", "LengthAxial", "WidthMax", "WidthBasal", "WidthNeck", "Thickness", "DSA", "PSA")
+
+# Apply the function grouped by PointType3 to overwrite the existing values
+data_split_iqr <- filtered_data %>%
+  group_by(PointType3) %>%
+  mutate(across(all_of(traits), 
+                ~ remove_outliers_median_split(.x, lower_multiplier = 1.5, upper_multiplier = 3))) %>%
+  ungroup()
+
+# Check the updated data
+head(data_split_iqr)
+
+```
+
+```{r}
+#Here we can check the specific number of NA values that were added. It ranges from less than 20 to 179 for DSA.  We may want to further consider whether this method is appropriate for DSA. First, let's see how it appears to have affected 
+
+# Check specific columns for NA values
+sapply(filtered_data[, 2:9], function(x) sum(is.na(x)))
+
+
+# Check specific columns for NA values
+sapply(data_split_iqr[, 2:9], function(x) sum(is.na(x)))
+```
+
+
+
+```{r}
+# Filter the data for Elko Series
+comparison_data_elko <- bind_rows(
+  mutate(filter(filtered_data, PointType3 == "Elko Series"), Dataset = "Original"),
+  mutate(filter(data_split_iqr, PointType3 == "Elko Series"), Dataset = "Trimmed")
+)
+
+# List of traits to plot
+traits <- c("LengthMax", "LengthAxial", "WidthMax", "WidthBasal", "WidthNeck", "Thickness", "DSA", "PSA")
+
+# Loop through each trait and create boxplots
+for (trait in traits) {
+  p <- ggplot(comparison_data_elko, aes(x = Dataset, y = .data[[trait]], fill = Dataset)) +
+    geom_boxplot() +
+    labs(title = paste("Comparison of", trait, "Before and After Outlier Removal (Elko Series)"), y = trait) +
+    theme_minimal()
+  
+  print(p)
+}
+
+```
+
+
+```{r}
+# Filter the data for Rosegate Series
+comparison_data_Rosegate <- bind_rows(
+  mutate(filter(data, PointType3 == "Rosegate Series"), Dataset = "Original"),
+  mutate(filter(data_split_iqr, PointType3 == "Rosegate Series"), Dataset = "Trimmed")
+)
+
+# List of traits to plot
+traits <- c("LengthMax", "LengthAxial", "WidthMax", "WidthBasal", "WidthNeck", "Thickness", "DSA", "PSA")
+
+# Loop through each trait and create boxplots
+for (trait in traits) {
+  p <- ggplot(comparison_data_Rosegate, aes(x = Dataset, y = .data[[trait]], fill = Dataset)) +
+    geom_boxplot() +
+    labs(title = paste("Comparison of", trait, "Before and After Outlier Removal (Rosegate Series)"), y = trait) +
+    theme_minimal()
+  
+  print(p)
+}
+```
+
+
+```{r}
+#Take a look at VOM, AV, and VOV measures to see how trimming the outliers potentially affects these measures. 
+
+# Function to calculate the measures of variation
+calculate_variations <- function(df, trait) {
+  df_summary <- df %>%
+    group_by(Site) %>%
+    summarise(
+      mean_trait = mean(.data[[trait]], na.rm = TRUE),
+      sd_trait = sd(.data[[trait]], na.rm = TRUE)
+    )
+  
+  variation_of_mean <- sd(df_summary$mean_trait, na.rm = TRUE)
+  average_variation <- mean(df_summary$sd_trait, na.rm = TRUE)
+  variation_of_variation <- sd(df_summary$sd_trait, na.rm = TRUE)
+  
+  return(data.frame(
+    Trait = trait,
+    Variation_of_Mean = variation_of_mean,
+    Average_Variation = average_variation,
+    Variation_of_Variation = variation_of_variation
+  ))
+}
+```
+
+
+```{r}
+# We can do it for the aggregate of the filtered and trimmmed data to begin with to roughly understand the effect without respect to point type or area. 
+
+
+# Function to calculate variations for both original and trimmed data
+compare_variations <- function(data1, data2, traits, data1_label = "Original", data2_label = "Trimmed") {
+  # Calculate variations for the first dataset
+  variation_results_data1 <- lapply(traits, function(trait) calculate_variations(data1, trait))
+  variation_results_data1_df <- bind_rows(variation_results_data1)
+  variation_results_data1_df$Dataset <- data1_label
+  
+  # Calculate variations for the second dataset
+  variation_results_data2 <- lapply(traits, function(trait) calculate_variations(data2, trait))
+  variation_results_data2_df <- bind_rows(variation_results_data2)
+  variation_results_data2_df$Dataset <- data2_label
+  
+  # Combine the results for comparison
+  combined_results <- bind_rows(variation_results_data1_df, variation_results_data2_df)
+  
+  return(combined_results)
+}
+```
+
+
+```{r}
+# Compare variations between original and trimmed data. Many of the measures below are pretty similar. However, some appear to be significantly different (maybe consider a t-test?).
+
+
+comparison_results <- compare_variations(filtered_data, data_split_iqr, traits)
+
+comparison_results <- comparison_results %>%
+  arrange(Trait, Dataset)
+
+# Display the comparison results
+print(comparison_results)
+```
+
+
+```{r}
+#Now we need to consider the number of artifacts we should have for each site and trait in order to adequately assess the measures of variation above. We can follow Eerkens and Bettinger 2008 (function and style) to do this. They use the significant linear relationship between mean and standard deviation and a confidence interval to assess the stability of the standard deviation. They ultimately determine that 7 is a good number of artifacts to get a reasonable estimate of standard deviation. Obviously more artifacts can refine the SD, but the added precision is somewhat negligible. First let's get some basic stats that may be of use later and include the mean and SD.  
+
+# Subdivide non-NA counts by region and PointType3, and calculate additional statistics
+trimmed_data_stats <- data_split_iqr %>%
+  group_by(PointType3) %>%
+  summarise(across(2:9, 
+                   list(
+                     count = ~sum(!is.na(.)),             # Count non-NA values
+                     mean = ~mean(., na.rm = TRUE),       # Mean, excluding NA values
+                     sd = ~sd(., na.rm = TRUE),           # Standard deviation, excluding NA values
+                     cv = ~sd(., na.rm = TRUE) / mean(., na.rm = TRUE) * 100,  # Coefficient of variation (CV)
+                     min = ~min(., na.rm = TRUE),         # Minimum value
+                     max = ~max(., na.rm = TRUE)          # Maximum value
+                   ), 
+                   .names = "{col}_{fn}")) %>%
+  pivot_longer(
+    cols = -c(PointType3),   # Pivot all columns except 'PointType3'
+    names_to = c("Trait", "Statistic"),     # Split column names into 'Trait' and 'Statistic'
+    names_sep = "_",                        # Separate by the underscore
+    values_to = "Value"                     # Values go into a 'Value' column
+  ) %>%
+  pivot_wider(
+    names_from = "Statistic",  # Pivot statistics back into columns
+    values_from = "Value"      # Fill values for each trait/statistic combination
+  ) %>%
+  arrange(Trait, PointType3)  # Reorder by Trait and PointType3
+
+# Display the results in long format
+print(trimmed_data_stats)
+
+
+```
+
+
+
+```{r}
+# Create a scatter plot with mean on the X-axis and SD on the Y-axis, excluding PSA and DSA traits
+plot <- trimmed_data_stats %>%
+  filter(!Trait %in% c("PSA", "DSA")) %>%  # Exclude PSA and DSA traits
+  ggplot(aes(x = mean, y = sd)) +
+  geom_point(aes(color = PointType3), size = 3) +  # Color by point type
+  #geom_text(aes(label = Trait), vjust = -1, hjust = 0.5, size = 3) +  # Optionally, add text labels for traits
+  labs(title = "Mean vs SD of Measurements by Point Type (Excluding PSA and DSA)",
+       x = "Mean",
+       y = "Standard Deviation (SD)") +
+  theme_minimal()
+
+# Display the plot
+print(plot)
+
+```
+```{r}
+# Filter out PSA and DSA traits
+filtered_stats <- trimmed_data_stats %>%
+  filter(!Trait %in% c("PSA", "DSA"))
+
+# Fit a linear model predicting SD based on the Mean
+lm_model <- lm(sd ~ mean, data = filtered_stats)
+
+# Display summary of the linear model
+summary(lm_model)
+
+# Plot the relationship between Mean and SD, colored by PointType3
+ggplot(filtered_stats, aes(x = mean, y = sd, color = PointType3)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "black") +
+  labs(title = "Relationship between Mean and Standard Deviation by Point Type",
+       x = "Mean (mm)", 
+       y = "Standard Deviation (mm)",
+       color = "Point Type") +
+  theme_minimal()
+
+```
+
+```{r}
+
+# Define the bootstrap function to calculate CV
+bootstrap_cv_grouped <- function(data, traits, group_var = "PointType3", sample_sizes = 2:40, n_bootstrap = 100) {
+  results <- data.frame(Sample_Size = integer(), CV = numeric(), PointType = character(), Trait = character())
+  
+  for (trait in traits) {
+    for (point_type in unique(data[[group_var]])) {
+      # Pre-filter the data by PointType3 and Trait
+      filtered_data <- data %>% 
+        filter(!!sym(group_var) == point_type) %>% 
+        select(all_of(trait)) %>% 
+        drop_na()
+      
+      for (size in sample_sizes) {
+        if (nrow(filtered_data) >= size) {  # Only proceed if there's enough data for sampling
+          bootstrap_stats <- replicate(n_bootstrap, {
+            sample_data <- sample(filtered_data[[trait]], size, replace = TRUE)
+            mean_value <- mean(sample_data, na.rm = TRUE)
+            sd_value <- sd(sample_data, na.rm = TRUE)
+            
+            if (mean_value != 0) {
+              c(cv = sd_value / mean_value)  # CV calculation
+            } else {
+              c(cv = NA)  # Avoid division by zero
+            }
+          }, simplify = TRUE)
+          
+          # Calculate the average CV for this sample size
+          avg_cv <- mean(bootstrap_stats, na.rm = TRUE)
+          
+          results <- rbind(results, data.frame(Sample_Size = size, CV = avg_cv, PointType = point_type, Trait = trait))
+        }
+      }
+    }
+  }
+  
+  return(results)
+}
+
+# Perform the bootstrap resampling grouped by PointType3 for all traits
+bootstrap_results_cv <- bootstrap_cv_grouped(data_split_iqr, traits)
+
+# Plotting the results with facets for each trait and grouping by PointType3
+ggplot(bootstrap_results_cv, aes(x = Sample_Size, y = CV, color = PointType, group = PointType)) +
+  geom_line(size = 1) +
+  facet_wrap(~ Trait, scales = "free_y") +
+  labs(title = "Coefficient of Variation (CV) Across Bootstrap Samples by Trait and Point Type",
+       x = "Sample Size",
+       y = "Coefficient of Variation (CV)",
+       color = "Point Type") +
+  theme_minimal()
+```
+
+```{r}
+#We can also do this by area and point type to add more data points and understand the variation within each type according to area. 
+
+# Subdivide non-NA counts by region and PointType3, and calculate additional statistics
+trimmed_data_stats_by_region <- data_split_iqr%>%
+  filter(Area_Jennings != "-")%>%
+  group_by(Area_Jennings, PointType3) %>%   # Group by 'Area_Jennings' and 'PointType3'
+  summarise(across(2:9, 
+                   list(
+                     count = ~sum(!is.na(.)),             # Count non-NA values
+                     mean = ~mean(., na.rm = TRUE),       # Mean, excluding NA values
+                     sd = ~sd(., na.rm = TRUE),           # Standard deviation, excluding NA values
+                     cv = ~sd(., na.rm = TRUE) / mean(., na.rm = TRUE) * 100,  # Coefficient of variation (CV)
+                     min = ~min(., na.rm = TRUE),         # Minimum value
+                     max = ~max(., na.rm = TRUE)          # Maximum value
+                   ), 
+                   .names = "{col}_{fn}")) %>%
+  pivot_longer(
+    cols = -c(Area_Jennings, PointType3),   # Pivot all columns except 'Area_Jennings' and 'PointType3'
+    names_to = c("Trait", "Statistic"),     # Split column names into 'Trait' and 'Statistic'
+    names_sep = "_",                        # Separate by the underscore
+    values_to = "Value"                     # Values go into a 'Value' column
+  ) %>%
+  pivot_wider(
+    names_from = "Statistic",  # Pivot statistics back into columns
+    values_from = "Value"      # Fill values for each trait/statistic combination
+  ) %>%
+  arrange(Trait, PointType3)  # Reorder by Trait and PointType3
+
+# Display the results in long format
+print(trimmed_data_stats_by_region)
+```
+
+```{r}
+# Create a scatter plot with mean on the X-axis and SD on the Y-axis, excluding PSA and DSA traits
+plot <- trimmed_data_stats_by_region %>%
+  filter(!Trait %in% c("PSA", "DSA")) %>%  # Exclude PSA and DSA traits
+  ggplot(aes(x = mean, y = sd)) +
+  geom_point(aes(color = Area_Jennings), size = 3) +  # Color by Area_Jennings
+  #geom_text(aes(label = Trait), vjust = -1, hjust = 0.5, size = 3) +  # Optionally, add text labels for traits
+  labs(title = "Mean vs SD of Measurements by Area and Point Type (Excluding PSA and DSA)",
+       x = "Mean",
+       y = "Standard Deviation (SD)",
+       color = "Area") +
+  theme_minimal()
+
+# Display the plot
+print(plot)
+
+```
+
+
+
+```{r}
+
+# Define a function to calculate average SD and CV for varying sample sizes
+calculate_average_sd_cv <- function(data, trait, min_sample_size = 2, max_sample_size = 30, reps = 50) {
+  results <- data.frame(Sample_Size = integer(), Avg_SD = numeric(), Avg_Mean = numeric(), CV = numeric(), PointType = character())
+  
+  for (n in min_sample_size:max_sample_size) {
+    for (point_type in unique(data$PointType3)) {
+      stats <- replicate(reps, {
+        sample_data <- data %>% 
+          filter(PointType3 == point_type) %>% 
+          select(all_of(trait)) %>% 
+          drop_na() %>%
+          sample_n(size = n, replace = TRUE)
+        
+        c(sd = sd(sample_data[[trait]], na.rm = TRUE), mean = mean(sample_data[[trait]], na.rm = TRUE))
+      }, simplify = "array")
+      
+      avg_sd <- mean(stats["sd",], na.rm = TRUE)
+      avg_mean <- mean(stats["mean",], na.rm = TRUE)
+      cv <- avg_sd / avg_mean
+      
+      results <- rbind(results, data.frame(Sample_Size = n, Avg_SD = avg_sd, Avg_Mean = avg_mean, CV = cv, PointType = point_type))
+    }
+  }
+  
+  return(results)
+}
+
+# Example using LengthMax
+sd_cv_results <- calculate_average_sd_cv(data_split_iqr, "LengthMax")
+
+# Plot the results
+ggplot(sd_cv_results, aes(x = Sample_Size, y = CV, color = PointType)) +
+  geom_line() +
+  geom_point() +
+  labs(title = "Coefficient of Variation by Sample Size",
+       x = "Sample Size",
+       y = "Coefficient of Variation (CV)",
+       color = "Point Type") +
+  theme_minimal()
+
+
+```
+
+
+
+```{r}
+# Function to calculate 95% confidence interval as a percentage of the mean
+calculate_ci_percentage <- function(data, trait, min_sample_size = 2, max_sample_size = 30, reps = 100) {
+  results <- data.frame(Sample_Size = integer(), Avg_CI_Percentage = numeric(), PointType = character())
+  
+  for (n in min_sample_size:max_sample_size) {
+    for (point_type in unique(data$PointType3)) {
+      ci_values <- replicate(reps, {
+        sample_data <- data %>% 
+          filter(PointType3 == point_type) %>% 
+          select(all_of(trait)) %>% 
+          drop_na() %>%
+          sample_n(n, replace = TRUE)
+        
+        mean_value <- mean(sample_data[[trait]], na.rm = TRUE)
+        sd_value <- sd(sample_data[[trait]], na.rm = TRUE)
+        ci <- 1.96 * (sd_value / sqrt(n))  # 95% CI formula
+        
+        (ci / mean_value) * 100  # CI as percentage of mean
+      })
+      results <- rbind(results, data.frame(Sample_Size = n, Avg_CI_Percentage = mean(ci_values), PointType = point_type))
+    }
+  }
+  
+  return(results)
+}
+
+# Example using LengthMax
+ci_results <- calculate_ci_percentage(data_split_iqr, "LengthMax")
+
+# Plot the results
+ggplot(ci_results, aes(x = Sample_Size, y = Avg_CI_Percentage, color = PointType)) +
+  geom_line() +
+  geom_point() +
+  labs(title = "95% Confidence Interval as Percentage of the Mean by Sample Size",
+       x = "Sample Size",
+       y = "CI as % of Mean",
+       color = "Point Type") +
+  theme_minimal()
+
+```
+
+
+
+
+```{r}
+# Check the number of eligible sites
+eligible_sites_check <- filtered_data_split_iqr %>%
+  group_by(Site) %>%
+  summarise(Valid_Count = sum(!is.na(LengthMax))) %>%
+  filter(Valid_Count >= 10)
+
+# Display the eligible sites
+print(eligible_sites_check)
+```
+
+
+```{r}
+# Function to calculate VOM, AV, and VOV for a subset of 5 sites with at least 10 values
+calculate_variations_for_sites <- function(df, trait, num_sites = 5, min_values = 10) {
+  # Filter sites that have at least min_values valid entries for the trait
+  eligible_sites <- df %>%
+    group_by(Site) %>%
+    filter(sum(!is.na(.data[[trait]])) >= min_values) %>%
+    summarise(
+      mean_trait = mean(.data[[trait]], na.rm = TRUE),
+      sd_trait = sd(.data[[trait]], na.rm = TRUE),
+      count = sum(!is.na(.data[[trait]]))
+    ) %>%
+    ungroup()
+  
+  # Check if there are enough eligible sites
+  if (n_distinct(eligible_sites$Site) < num_sites) {
+    return(data.frame(Site1 = NA, Site1_Count = NA, Site2 = NA, Site2_Count = NA,
+                      Site3 = NA, Site3_Count = NA, Site4 = NA, Site4_Count = NA,
+                      Site5 = NA, Site5_Count = NA, VOM = NA, AV = NA, VOV = NA))
+  }
+  
+  # Randomly select the specified number of sites
+  selected_sites <- eligible_sites %>%
+    filter(Site %in% sample(unique(Site), num_sites))
+  
+  # Calculate the variation metrics
+  variation_of_mean <- sd(selected_sites$mean_trait, na.rm = TRUE)
+  average_variation <- mean(selected_sites$sd_trait, na.rm = TRUE)
+  variation_of_variation <- sd(selected_sites$sd_trait, na.rm = TRUE)
+  
+  # Return the metrics along with site information
+  return(data.frame(
+    Site1 = selected_sites$Site[1], Site1_Count = selected_sites$count[1],
+    Site2 = selected_sites$Site[2], Site2_Count = selected_sites$count[2],
+    Site3 = selected_sites$Site[3], Site3_Count = selected_sites$count[3],
+    Site4 = selected_sites$Site[4], Site4_Count = selected_sites$count[4],
+    Site5 = selected_sites$Site[5], Site5_Count = selected_sites$count[5],
+    VOM = variation_of_mean, AV = average_variation, VOV = variation_of_variation
+  ))
+}
+
+# Monte Carlo simulation function with site and count information
+monte_carlo_simulation <- function(df, trait, iterations = 1000, num_sites = 5, min_values = 10) {
+  results <- replicate(iterations, calculate_variations_for_sites(df, trait, num_sites, min_values), simplify = FALSE)
+  results_df <- bind_rows(results)
+  return(results_df)
+}
+
+# Filter the data for Western area and Elko Series
+filtered_data <- data %>%
+  filter(Area_Jennings == "Western" & PointType3 == "Elko Series")%>%
+  filter(Site != "-" & Site != "ISO")
+
+# Run Monte Carlo simulation for LengthMax with site and count information
+lengthmax_simulation <- monte_carlo_simulation(filtered_data, "LengthMax", min_values = 10)
+
+# Display a sample of the results
+print(head(lengthmax_simulation))
+
+```
+
+
+
+
+
+```{r}
+lengthmax_simulation_long <- pivot_longer(lengthmax_simulation, 
+                                          cols = c(VOM, AV, VOV), 
+                                          names_to = "Metric", 
+                                          values_to = "Value")
+
+# Boxplot for each metric
+ggplot(lengthmax_simulation_long, aes(x = Metric, y = Value, fill = Metric)) +
+  geom_boxplot(alpha = 0.7) +
+  labs(title = "Boxplot of Variation Metrics (VOM, AV, VOV)",
+       y = "Value",
+       x = "Metric") +
+  theme_minimal()
+
+```
+
+
+
+
+
+```{r}
+# List of traits to simulate and plot
+traits <- c("LengthMax", "WidthMax", "WidthBasal", "WidthNeck", "Thickness", "DSA", "PSA")
+
+# Initialize an empty list to store the results for all traits
+all_simulation_results <- list()
+
+# Loop through each trait
+for (trait in traits) {
+  # Run Monte Carlo simulation for the current trait
+  simulation_results <- monte_carlo_simulation(filtered_data, trait, min_values = 10)
+  
+  # Store the results with the trait name
+  simulation_results$Trait <- trait
+  
+  # Append to the list
+  all_simulation_results[[trait]] <- simulation_results
+}
+
+# Combine all results into a single dataframe
+combined_simulation_results <- bind_rows(all_simulation_results)
+
+# Convert to long format for plotting
+combined_simulation_results_long <- pivot_longer(combined_simulation_results, 
+                                                 cols = c(VOM, AV, VOV), 
+                                                 names_to = "Metric", 
+                                                 values_to = "Value")
+
+# Plot Boxplot for each metric by trait
+ggplot(combined_simulation_results_long, aes(x = Metric, y = Value, fill = Metric)) +
+  geom_boxplot(alpha = 0.7) +
+  facet_wrap(~Trait, scales = "free_y") +
+  labs(title = "Boxplot of Variation Metrics (VOM, AV, VOV) by Trait for Elko Series",
+       y = "Value",
+       x = "Metric") +
+  theme_minimal()
+```
+
+
+```{r}
+# Function to run the simulation with a given threshold and label
+run_simulation_with_threshold <- function(data, trait, min_values, label) {
+  simulation_results <- monte_carlo_simulation(data, trait, min_values = min_values)
+  simulation_results$Threshold <- label
+  simulation_results$Trait <- trait
+  return(simulation_results)
+}
+
+# Initialize an empty list to store the results for all traits
+all_simulation_results <- list()
+
+# Loop through each trait
+for (trait in traits) {
+  # Run Monte Carlo simulation with a 20 artifact threshold
+  results_20 <- run_simulation_with_threshold(filtered_data, trait, min_values = 20, label = "20 Artifacts")
+  
+  # Run Monte Carlo simulation with a lower threshold (e.g., 10 artifacts)
+  results_10 <- run_simulation_with_threshold(filtered_data, trait, min_values = 10, label = "10 Artifacts")
+  
+  # Combine results for both thresholds
+  combined_results <- bind_rows(results_20, results_10)
+  
+  # Append to the list
+  all_simulation_results[[trait]] <- combined_results
+}
+
+# Combine all results into a single dataframe
+combined_simulation_results <- bind_rows(all_simulation_results)
+
+# Convert to long format for plotting
+combined_simulation_results_long <- pivot_longer(combined_simulation_results, 
+                                                 cols = c(VOM, AV, VOV), 
+                                                 names_to = "Metric", 
+                                                 values_to = "Value")
+
+# Plot Boxplot for each metric by trait and threshold
+ggplot(combined_simulation_results_long, aes(x = Metric, y = Value, fill = Threshold)) +
+  geom_boxplot(alpha = 0.7) +
+  facet_wrap(~Trait, scales = "free_y") +
+  labs(title = "Boxplot of Variation Metrics (VOM, AV, VOV) by Trait and Threshold",
+       y = "Value",
+       x = "Metric") +
+  theme_minimal()
+```
+
+
+
+
+```{r}
+# Define the trait and point type you're interested in
+trait_of_interest <- "LengthMax"
+point_type <- "Elko Series"
+
+# Filter data for the specific point type
+filtered_data <- data %>%
+  filter(PointType3 == point_type) %>%
+  filter(!is.na(.data[[trait_of_interest]]))
+
+# Define the sample sizes to test
+sample_sizes <- 2:30
+
+# Initialize an empty dataframe to store results
+results <- data.frame(SampleSize = numeric(), AvgSD = numeric(), CI = numeric())
+
+# Monte Carlo-like simulation
+for (n in sample_sizes) {
+  sd_values <- replicate(1000, {
+    sample_data <- sample(filtered_data[[trait_of_interest]], n, replace = TRUE)
+    sd(sample_data)
+  })
+  
+  results <- rbind(results, data.frame(SampleSize = n, AvgSD = mean(sd_values), CI = sd(sd_values)))
+}
+
+# Plot the results
+ggplot(results, aes(x = SampleSize)) +
+  geom_line(aes(y = AvgSD, color = "Average SD")) +
+  geom_line(aes(y = CI, color = "95% Confidence Interval")) +
+  geom_point(aes(y = AvgSD)) +
+  geom_point(aes(y = CI)) +
+  geom_vline(xintercept = 7, linetype = "dashed") + # Example of potential Ncrit
+  labs(title = paste("Stabilization of Standard Deviation by Sample Size for", point_type),
+       x = "Sample Size", y = "Test Value") +
+  theme_minimal() +
+  scale_color_manual(name = "Metric", values = c("Average SD" = "black", "95% Confidence Interval" = "gray"))
+
+```
+
+
+
+
+
+```{r}
+# Fit linear models for each area and extract R-squared values
+rsq_by_area <- non_na_stats_by_region %>%
+  filter(!Trait %in% c("PSA", "DSA")) %>%  # Exclude PSA and DSA traits
+  group_by(Area_Jennings) %>%
+  summarise(
+    rsq = summary(lm(sd ~ mean))$r.squared  # Calculate R-squared for each area
+  )
+
+# Display the R-squared values by area
+print(rsq_by_area)
+
+```
+
+
+```{r}
+# Step 1: Filter out NA/NaN values and rows with a count below 30
+lm_data <- non_na_stats_by_region %>%
+  filter(!is.na(mean) & !is.na(sd) & !is.nan(mean) & !is.nan(sd)) %>%  # Remove rows with NA/NaN in mean or sd
+  filter(!Trait %in% c("PSA", "DSA")) %>%  # Exclude PSA and DSA traits
+  filter(count >= 30)  # Keep only rows where count is 30 or more
+
+# Step 2: Fit the model with grouping (including Area_Jennings as a factor)
+grouped_model <- lm(sd ~ mean * Area_Jennings, data = lm_data)
+
+# Step 3: Add residuals to the cleaned dataframe using base R
+lm_data$Residuals <- grouped_model$residuals
+
+# Step 4: Plot the residuals by area
+residual_plot <- ggplot(lm_data, aes(x = mean, y = Residuals, color = Area_Jennings, shape = Area_Jennings)) +
+  geom_point() +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "red") +  # Add a horizontal line at y = 0
+  labs(title = "Residuals of Linear Model by Area",
+       x = "Mean",
+       y = "Residuals") +
+  theme_minimal()
+
+# Display the plot
+print(residual_plot)
+
+```
+
+```{r}
+# Step 1: Calculate mean residuals by PointType3 and Area_Jennings
+mean_residuals <- cleaned_data %>%
+  group_by(PointType3, Area_Jennings) %>%
+  summarise(mean_residual = mean(Residuals, na.rm = TRUE)) %>%
+  ungroup()
+
+# Step 2: Reshape the data into a crosstab format
+crosstab_residuals <- mean_residuals %>%
+  pivot_wider(names_from = Area_Jennings, values_from = mean_residual)
+
+# Display the crosstab
+print(crosstab_residuals)
+
+```
+```{r}
+# Calculate standardized residuals
+standardized_residuals <- rstandard(grouped_model)
+
+# Add standardized residuals to the dataframe
+cleaned_data$Standardized_Residuals <- standardized_residuals
+
+# Step 3: Calculate mean standardized residuals by PointType3 and Area_Jennings
+mean_standardized_residuals <- cleaned_data %>%
+  group_by(PointType3, Area_Jennings) %>%
+  summarise(mean_standardized_residual = mean(Standardized_Residuals, na.rm = TRUE)) %>%
+  ungroup()
+
+# Step 4: Reshape the data into a crosstab format
+crosstab_standardized_residuals <- mean_standardized_residuals %>%
+  pivot_wider(names_from = Area_Jennings, values_from = mean_standardized_residual)
+
+# Display the crosstab
+print(crosstab_standardized_residuals)
+
+
+```
+
+
+
+
+
+
+```{r}
+# Filter the data to exclude "-" values in PointType3 and several types I'm not considering along with areas that aren't helpful
+
+filtered_data <- data_cleaned %>% filter(PointType3 != "-" & !PointType3 %in% c("Carson Point ", "Great Basin Concave Base", "Great Basin Stemmed", "Pinto Series", "Desert Series", "Large Side-notched", "Humboldt Series")) %>%
+  filter(Area_Jennings != "-" & Area_Jennings != "Western/Southwestern")
+```
+
+
+```{r}
+# Filter out NA values in LengthMax and then group by Area_Jennings and PointType3
+summary_stats2 <- filtered_data %>%
+  filter(!is.na(LengthMax)) %>%  # Exclude NA values in LengthMax
+  group_by(PointType3, Area_Jennings) %>%
+  summarise(
+    n = n(),  # Number of records
+    unique_sites = n_distinct(Site)  # Number of unique sites
+  )
+
+# View the calculated statistics (optional)
+print(summary_stats2)
+```
+
+
+
+```{r}
+# Create the faceted boxplot with the corrected summary statistics
+ggplot(filtered_data %>% filter(!is.na(LengthMax)), aes(x = factor(Area_Jennings), y = LengthMax)) +
+  geom_boxplot() +
+  geom_text(data = summary_stats2, aes(x = Area_Jennings, y = max(filtered_data$LengthMax, na.rm = TRUE) + 2,
+                                      label = paste0("n = ", n, "\nSites = ", unique_sites)),
+            hjust = 0.5, vjust = 1, size = 2.5) +  # Smaller text size and adjusted y-position
+  facet_wrap(~ PointType3) +  # Facet by PointType3
+  theme_minimal() +
+  labs(title = "Boxplot of Maximum Length by Area and Point Type",
+       x = "Great Basin Subarea (Jennings)",
+       y = "Max Length")
+```
+
+```{r}
+# Print the names of the filtered_data to see what columns are available
+print(names(filtered_data)[2:9])
+
+# Print the levels of the attributes to ensure they match
+print(levels(attributes))
+
+# List of column names for the attributes I want to plot
+attributes <- factor(names(filtered_data)[2:9], levels=c("LengthMax",   "LengthAxial", "WidthMax",    "WidthBasal",  "WidthNeck",   "Thickness",   "DSA",         "PSA"))
+```
+
+
+
+
+```{r}
+# Loop through each attribute
+for (attribute in attributes) {
+  
+  # Filter out NA values for the current attribute
+  summary_stats2 <- filtered_data %>%
+    filter(!is.na(.data[[attribute]])) %>%  # Exclude NA values in the current attribute
+    group_by(Area_Jennings, PointType3) %>%
+    summarise(
+      n = n(),  # Number of records
+      unique_sites = n_distinct(Site)  # Number of unique sites
+    )
+  
+  # Create the faceted boxplot for the current attribute
+  p <- ggplot(filtered_data %>% filter(!is.na(.data[[attribute]])), aes(x = factor(Area_Jennings), y = .data[[attribute]])) +
+    geom_boxplot() +
+    geom_text(data = summary_stats2, aes(x = Area_Jennings, y = max(filtered_data[[attribute]], na.rm = TRUE) + 2,
+                                        label = paste0("n = ", n, "\nSites = ", unique_sites)),
+              hjust = 0.5, vjust = 1, size = 2.5) +  # Smaller text size and adjusted y-position
+    facet_wrap(~ PointType3) +  # Facet by PointType3
+    theme_minimal() +
+    labs(title = paste("Boxplot of", attribute, "by Area and Point Type"),
+         x = "Great Basin Subarea (Jennings)",
+         y = attribute)
+  
+  # Display the plot
+  print(p)
+  
+  # Optionally, save the plot to a file
+  ggsave(filename = paste0("Boxplot_", attribute, ".png"), plot = p, width = 17, height = 11)
+}
+
+```
+
+```{r}
+# List of attributes for ANOVA and Tukey tests
+anova_results <-list()
+tukey_results <-list()# Loop through each attribute
+for(attribute in attributes){
+  data_no_na <- filtered_data %>% # Filter out NA values for the current attribute
+    filter(!is.na(.data[[attribute]]))# Initialize lists to store results for each PointType3
+  anova_list <-list()
+  tukey_list <-list()# Perform ANOVA and Tukey HSD for each PointType3 group
+  for(point_type in unique(data_no_na$PointType3)){# Filter data for the current PointType3
+    data_subset <- data_no_na %>% filter(PointType3 == point_type)# Perform ANOVA
+    anova_model <- aov(data_subset[[attribute]]~ Area_Jennings, data = data_subset)# Store ANOVA summary
+    anova_summary <- summary(anova_model)
+    anova_list[[point_type]]<- anova_summary
+    
+    # Perform Tukey HSD test if ANOVA is significant
+    if(anova_summary[[1]]$`Pr(>F)`[1]<0.05){
+      tukey_test <- TukeyHSD(anova_model)
+      tukey_list[[point_type]]<- tukey_test
+    }}# Store results for each attribute
+  anova_results[[attribute]]<- anova_list
+  tukey_results[[attribute]]<- tukey_list
+}
+
+# Example: View ANOVA results for LengthMax
+anova_results[["LengthMax"]]# Example: View Tukey HSD results for LengthMax
+tukey_results[["LengthMax"]]
+```
+
+```{r}
+# Initialize a data frame to store ANOVA results
+anova_summary_df <- data.frame()
+
+# Loop through each trait and point type to get ANOVA results
+for (trait_name in attributes) {  # Assuming 'attributes' is a list of trait names (e.g., LengthMax, WidthMax)
+  for (point_type in names(anova_results[[trait_name]])) {
+    if (!is.null(anova_results[[trait_name]][[point_type]])) {
+      # Extract the ANOVA summary
+      anova_summary <- anova_results[[trait_name]][[point_type]]
+      # Store F-value and P-value
+      anova_summary_df <- rbind(anova_summary_df, data.frame(
+        Trait = trait_name,
+        PointType = point_type,
+        FValue = anova_summary[[1]]$`F value`[1],
+        PValue = anova_summary[[1]]$`Pr(>F)`[1]
+      ))
+    }
+  }
+}
+
+# View the summarized ANOVA results
+print(anova_summary_df)
+
+```
+```{r}
+ggplot(anova_summary_df, aes(x = Trait, y = FValue, fill = PointType)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "ANOVA F-Values by Trait and Point Type",
+       x = "Trait",
+       y = "F-Value",
+       fill = "Point Type") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+```
+```{r}
+ggplot(anova_summary_df, aes(x = Trait, y = -log10(PValue))) +
+  geom_point(size = 3) +
+  facet_wrap(~ PointType, scales = "free_y") +
+  labs(title = "ANOVA -log10(P-Values) by Trait and Point Type",
+       x = "Trait",
+       y = "-log10(P-Value)",
+       color = "Trait") +
+  geom_hline(yintercept = -log10(0.05), linetype = "dashed", color = "red") +  # Significance threshold
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+```
+
+
+
+```{r}
+# Function to tidy Tukey HSD results into a data frame
+tidy_tukey <- function(tukey_hsd) {
+  result_df <- as.data.frame(tukey_hsd$Area_Jennings)
+  result_df$comparison <- rownames(result_df)
+  result_df <- result_df %>%
+    separate(comparison, into = c("Group1", "Group2"), sep = "-") %>%
+    mutate(significant = `p adj` < 0.05)
+  return(result_df)
+}
+
+# Example: Process the Tukey HSD results for "Desert Series"
+trait_name <- "LengthMax"  # Define the trait being analyzed
+tukey_df <- tidy_tukey(tukey_results[[trait_name]][["Elko Series"]])
+
+# Assign unique y-axis positions without manual adjustments
+tukey_df <- tukey_df %>%
+  mutate(y_position = row_number())
+
+# Create the ggplot for the Tukey HSD results with the corrected red dashed line
+ggplot(tukey_df, aes(x = diff, y = y_position, color = Group1)) +
+  geom_point(size = 3) +
+  geom_errorbar(aes(xmin = lwr, xmax = upr, y = y_position), width = 0.2) +
+  geom_vline(xintercept = 0, linetype = "dashed", color = "red") +  # Correcting the line to be vertical
+  scale_y_continuous(breaks = tukey_df$y_position, labels = tukey_df$Group2) +
+  labs(title = paste("Tukey HSD:", "Elko Series"),
+       subtitle = paste("Trait:", trait_name),
+       x = "Difference in Means",
+       y = "Comparison",
+       color = "Area Compared") +
+  theme_minimal() +
+  theme(axis.text.y = element_text(size = 10))
 
 
 ```
 ```{r}
-range(data$LengthMax, na.rm = T)
-range(data$WidthMax, na.rm = T)
+# Initialize an empty data frame to store Tukey HSD results for all point types
+tukey_all_df <- data.frame()
+
+# Loop through each trait and each point type to get Tukey HSD results
+for (trait_name in attributes) {  # Assuming 'attributes' is a list of trait names (e.g., LengthMax, WidthMax)
+  for (point_type in names(tukey_results[[trait_name]])) {
+    if (!is.null(tukey_results[[trait_name]][[point_type]])) {
+      # Tidy the Tukey HSD results
+      tukey_df <- tidy_tukey(tukey_results[[trait_name]][[point_type]])
+      # Add columns for trait and point type
+      tukey_df$Trait <- trait_name
+      tukey_df$PointType <- point_type
+      # Combine into the main data frame
+      tukey_all_df <- rbind(tukey_all_df, tukey_df)
+    }
+  }
+}
+
+# View the structure of the combined data frame
+str(tukey_all_df)
+
 ```
+
+```{r}
+# Initialize a data frame to store significance results for all point types and traits
+significance_df <- tukey_all_df %>%
+  group_by(PointType, Trait, Group1, Group2) %>%
+  summarize(Significant = any(significant), .groups = 'drop')
+
+# View the summarized significance results
+print(significance_df)
+
+```
+```{r}
+ggplot(significance_df, aes(x = Trait, y = interaction(Group1, Group2), fill = Significant)) +
+  geom_tile(color = "white") +
+  scale_fill_manual(values = c("TRUE" = "red", "FALSE" = "grey90")) +
+  facet_wrap(~ PointType, scales = "free_y") +
+  labs(title = "Significance of Trait Differences by Area",
+       subtitle = "Faceted by Point Type",
+       x = "Trait",
+       y = "Area Comparison",
+       fill = "Significant") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        axis.text.y = element_text(size = 8))
+
+```
+
+
+
+```{r}
+ggplot(significance_df, aes(x = Trait, y = interaction(Group1, Group2), color = Significant)) +
+  geom_point(size = 4, shape = ifelse(significance_df$Significant, 16, NA)) +
+  scale_color_manual(values = c("TRUE" = "red"), guide = "none") +  # Remove the guide for FALSE values
+  facet_wrap(~ PointType, scales = "free_y") +
+  labs(title = "Significance of Trait Differences by Area",
+       subtitle = "Faceted by Point Type",
+       x = "Trait",
+       y = "Area Comparison") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        axis.text.y = element_text(size = 8))
+
+```
+
+
+
+```{r}
+filtered_data<-filtered_data%>%
+  filter(Area_Jennings=="Northern"| Area_Jennings=="Western")
+
+  ggpairs(filtered_data, columns = c(2:9), ggplot2::aes(color=Area_Jennings),upper = list(continuous = wrap("cor", size = 3)))
+```
+
 
