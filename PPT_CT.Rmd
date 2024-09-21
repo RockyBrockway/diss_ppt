@@ -1,5 +1,5 @@
 ---
-title: "PPT_CT"
+title: "Culture Transmission Via Projectile Points"
 author: "Rocky Brockway"
 date: "2024-07-11"
 output: html_document
@@ -10,20 +10,35 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-```{r}
+```{r, message =FALSE}
 library(dplyr)
 library(ggplot2)
+library(corrplot)
 library(tidyr)
 library(GGally)
 library(forcats)
 ```
 
+# Introduction
+
+This document addresses biases in culture transmission via a rather large (15383 ppts) data set compiled from Thomas et al. (nd - Alta Toquima), Hildebrandt et al. (2016 - Ruby Pipeline), Smith et al. (2015-Last Supper Cave), Jones et al. (2015 - McGinness Hills), McGuire et al. (2018 - Hycroft - data collected by WCRM), Cunnar et al. (2018 - Long Canyon), and Brockway et al. (2019 - Florida Canyon). These empirical data can be compared with expectations from a simulation model that I constructed last year. 
+
+The steps in the process are as follows:
+* import the data into R and clean it up
+* exploratory data analysis
+* outlier issues
+* sample size issues
+* summary data
+* calculate variation measures (VOM, AV, VOV)
+* compare empirical variation to simulated variation
 
 
+
+
+# Import and cleanup 
+Calling the dataframe structure reveals that thickness is character, rather than numeric; PSA and DSA are not consistent in their data type; Jennings area is not factor and neither are the point type designations. Finally, incomplete measures are preceded by a negative symbol. They should be NA since we are only concerned with complete measurements for this analysis.  
 
 ```{r}
-#pull in data compiled from various sites throughout the Great Basin (Thomas et al. nd - Alta Toquima), Ruby Pipeline (Hildebrandt et al. 2016), Last Supper Cave (Smith et al. 2015)  
-
 data<-read.csv("PPT_data.csv")
 ```
 
@@ -36,6 +51,8 @@ str(data)
 data$Thickness<-as.numeric(data$Thickness)
 data$DSA<-as.integer(data$DSA)
 data$Area_Jennings<-as.factor(data$Area_Jennings)
+
+#make PointType3 factor data and set levels
 data$PointType3<-as.factor(data$PointType3)
 levels(data$PointType3)
 data$PointType3<-factor(data$PointType3, levels = c( "-", "Carson Point ", "Desert Series", "Rosegate Series",  "Elko Series", "Gatecliff Series", "Large Side-notched", "Pinto Series", "Humboldt Series", "Great Basin Concave Base", "Great Basin Stemmed"))
@@ -48,10 +65,10 @@ ls(data)
 
 #create a vector of variable names that I want to replace any negative or empty values with NA
 
-cols_to_check <- c("LengthAxial", "LengthMax", "WidthMax", "WidthBasal", "WidthNeck", "Thickness", "DSA", "PSA")  
+traits <- c("LengthMax", "LengthAxial", "WidthMax", "WidthBasal", "WidthNeck", "Thickness", "DSA", "PSA")  
 
 #attribute value must be greater than 0, otherwise it's na - I only want complete measurements
-data[cols_to_check] <- lapply(data[cols_to_check], function(x) ifelse(x < 0, NA, x))
+data[traits] <- lapply(data[traits], function(x) ifelse(x < 0, NA, x))
                               
 #check that it worked
 na.omit(data[data[2:7] < 0,])
@@ -65,7 +82,127 @@ data<-data %>%
   filter(Exclude_LW!="Yes")
 ```
 
+#Exploratory Data Analysis 
 
+We can start by looking at the data several different ways, evaluating whether projectile point trait measurements appear to be reasonable and show any clear trends. The workflow here is as follows: 
+* Calculate basic summary statistics by trait and assess what proportion of traits are NA
+* Pairwise assessment of correlation and histograms for each trait by point type (Gatecliff, Elko, Rosegate, and Desert Series only)
+* Boxplots and summary stats for each trait specific to each of the four point types
+* Test whether traits are normally distributed for each point type
+
+```{r, warning=FALSE, message=FALSE}
+# Step 1: Data Overview
+
+# 1.1 Summary statistics for all traits
+summary_stats <- data %>%
+  select(all_of(traits)) %>%
+  summary()
+
+print(summary_stats)
+
+# 1.2 Summarize missing data
+missing_data <- data %>%
+  summarise(across(all_of(traits), ~ sum(is.na(.)) / n()))
+
+print(missing_data)
+
+# Step 2: Assessing Data Structure and Visualizing Distributions
+
+# 2.1 Trait correlation, histograms, and pairwise plots (Gatecliff, Elko, Rosegate, and Desert Series only)
+
+# Define the PointType3 values to loop over
+point_types <- c("Gatecliff Series", "Elko Series", "Rosegate Series", "Desert Series")
+
+# Loop over each PointType3 and create separate pairwise plots in ggpairs
+for (point_type in point_types) {
+  
+  # Filter the data for the current PointType3
+  filtered_data <- data %>%
+    filter(PointType3 == point_type) %>%
+    select(all_of(traits))  # Only select the trait columns for ggpairs
+  
+  # Create the pairwise plot matrix for the current PointType3
+  pairwise_plot <- ggpairs(
+    filtered_data,
+    columns = 1:length(traits),        # Specify the trait columns
+    upper = list(continuous = "cor"),  # Correlation in the upper panels
+    lower = list(continuous = "points"), # Scatter plots in the lower panels
+    diag = list(continuous = "barDiag")  # Histograms on the diagonal
+  ) +
+    labs(title = paste("Pairwise Plots for", point_type)) + 
+    theme(legend.position = "none", 
+          strip.text = element_text(size = 8, color = "blue"))  # Customize the strip text
+  
+  
+  # Print the pairwise plot for the current PointType3
+  print(pairwise_plot)
+}
+
+
+# 2.2 Boxplots and summary stats for each trait and point type (Gatecliff, Elko, Rosegate, and Desert Series only)
+
+# 2.2.1: Calculate summary statistics (Count, Mean, SD, CV) for each trait and PointType3
+calculate_summary_stats <- function(data, traits) {
+  summary_table <- data %>%
+    filter(PointType3 %in% c("Gatecliff Series", "Elko Series", "Rosegate Series", "Desert Series")) %>%
+    group_by(PointType3) %>%
+    summarise(across(all_of(traits),
+                     list(
+                       Count = ~sum(!is.na(.)),       # Count non-NA values
+                       Mean = ~mean(., na.rm = TRUE), # Mean
+                       SD = ~sd(., na.rm = TRUE),     # Standard deviation
+                       CV = ~sd(., na.rm = TRUE) / mean(., na.rm = TRUE)  # Coefficient of variation
+                     ), .names = "{col}_{fn}"))
+  
+  return(summary_table)
+}
+
+# 2.2.2: Generate the summary table
+summary_stats <- calculate_summary_stats(data, traits)
+
+# 2.2.3: Function to create boxplots with annotations for each trait and PointType3
+visualize_distributions <- function(traits, filtered_data, summary_stats) {
+  for (trait in traits) {
+    
+    # Filter the summary stats for the current trait and PointType3
+    trait_stats <- summary_stats %>%
+      select(PointType3, starts_with(trait)) %>%
+      rename(Count = paste0(trait, "_Count"),
+             Mean = paste0(trait, "_Mean"),
+             SD = paste0(trait, "_SD"),
+             CV = paste0(trait, "_CV")) %>%
+      # Prepare text label with "n:", mean symbol (μ), and SD symbol (σ)
+     mutate(label = paste0("n: ", Count, 
+                            "\n\u03BC: ", round(Mean, 2), 
+                            "\n\u03C3: ", round(SD, 2), 
+                            "\nCV: ", round(CV, 2)))
+    
+    # Boxplots with annotations inside the plot area
+    p_box <- ggplot(filtered_data, aes_string(x = "PointType3", y = trait, fill = "PointType3")) +
+      geom_boxplot() +
+      labs(title = paste("Boxplot of", trait, "by Point Type"), x = "Point Type", y = trait) +
+      theme_minimal() +
+      theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+      theme(legend.position = "none") +
+      # Add annotations for Count, Mean, SD
+      geom_text(data = trait_stats, 
+                aes(x = as.numeric(factor(PointType3)) - 0.2, # Shift x to the left of center
+                    y = max(filtered_data[[trait]], na.rm = TRUE) - 0.05 * max(filtered_data[[trait]], na.rm = TRUE), # Control Y below max
+                    label = label), 
+                size = 2.5, color = "black", inherit.aes = FALSE)
+    
+    print(p_box)
+  }
+}
+
+# 2.2.4: Filter data for specific PointType3 values
+filtered_data <- data %>%
+  filter(PointType3 %in% c("Gatecliff Series", "Elko Series", "Rosegate Series", "Desert Series"))
+
+# 2.2.5: Run the visualization function with annotations
+visualize_distributions(traits, filtered_data, summary_stats)
+
+```
 
 ```{r}
 # Function to apply Shapiro-Wilk test to each trait within each PointType3 group
@@ -77,25 +214,46 @@ test_normality <- function(x) {
   }
 }
 
-# Apply the normality test to each trait within each PointType3 group
-normality_results <- data %>%
+# Example setup - Replace this with your actual normality testing code if necessary
+normality_results <- filtered_data %>%
   group_by(PointType3) %>%
-  summarise(across(2:9, ~test_normality(.), .names = "p_value_{col}"))
-
-# Display the normality test results
-print(normality_results)
+  summarise(across(traits, test_normality, .names = "p_value_{.col}"))
 
 ```
 
 
 ```{r}
-# List of traits to plot
-traits <- c("LengthMax", "LengthAxial", "WidthMax", "WidthBasal", "WidthNeck", "Thickness", "DSA", "PSA")
+# Transforming the normality results for heatmap
+normality_heatmap_data <- normality_results %>%
+  pivot_longer(
+    cols = -PointType3,
+    names_to = "Trait",
+    values_to = "P_Value"
+  ) %>%
+  mutate(
+    Normality = ifelse(P_Value < 0.05, "Non-Normal", "Normal"),
+    Trait = sub("p_value_", "", Trait)  # Clean up trait names if they are prefixed
+  )
+```
 
-# Filter the data for the selected point types
-filtered_data <- data %>%
-  filter(PointType3 %in% c("Elko Series", "Gatecliff Series", "Rosegate Series"))
 
+
+```{r}
+# Plotting the heatmap
+ggplot(normality_heatmap_data, aes(x = Trait, y = PointType3, fill = Normality)) +
+  geom_tile(color = "white") +  # Use color to delineate tiles
+  scale_fill_manual(values = c("Normal" = "green", "Non-Normal" = "red")) +
+  labs(title = "Heatmap of Normality Test Results",
+       subtitle = "Based on Shapiro-Wilk test (Green: Normal, Red: Non-Normal)",
+       x = "Trait",
+       y = "Point Type") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))  # Rotate x labels for better readability
+
+```
+
+
+```{r}
 # Loop through each trait and create density plots
 for (trait in traits) {
   p <- ggplot(filtered_data, aes(x = .data[[trait]], fill = PointType3)) +
